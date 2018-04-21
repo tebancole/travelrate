@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+public/lib
+package-lock.json
+TODO.md
+public/.DS_Store
+
+.vscode/launch.json
+
+
+public/generalStyles.css
+public/sources/styles.min.css
+public/components/servicios/servicioArticulos.service.js
