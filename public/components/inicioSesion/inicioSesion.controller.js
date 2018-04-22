@@ -4,11 +4,11 @@
     .module('travelrate')
     .controller('controladorLogin', controladorLogin);
 
-  controladorLogin.$inject = ['$location', 'servicioLogin', 'servicioUsuarios'];
+  controladorLogin.$inject = ['$state','$location', 'servicioLogin'];
 
-  function controladorLogin($location, servicioLogin, servicioUsuarios) {
+  function controladorLogin($state, $location, servicioLogin) {
     let vm = this;
-    vm.listaUsuarios = servicioUsuarios.getUsuarios();
+    
     vm.usuario = {};
 
 
@@ -23,5 +23,8 @@
         swal("Datos erroneos", "Intente nuevamente", "error");
       }
     }
+
+
+
   }
 })();

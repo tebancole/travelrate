@@ -45,7 +45,7 @@ gulp.task('dependencies', () => {
       './node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
       './node_modules/oclazyload/dist/ocLazyLoad.min.js',
       './node_modules/ui-router-page-title/page-title.min.js',
-      './node_modules/payform/dist/payform.js'
+      
 
 
     ])
@@ -54,10 +54,27 @@ gulp.task('dependencies', () => {
   gulp.src([
       './node_modules/bootstrap/dist/js/bootstrap.min.js',
       './node_modules/bootstrap/dist/css/bootstrap.min.css',
-      './node_modules/jquery/dist/jquery.min.js',
       './node_modules/popper.js/dist/umd/popper.min.js'
+  
     ])
     .pipe(gulp.dest('./public/lib/bootstrap'));
+
+    gulp.src([
+      './node_modules/animate.css/animate.min.css'
+    ])
+    .pipe(gulp.dest('./public/lib/animate'));
+
+    
+    gulp.src([
+      './node_modules/jquery/dist/jquery.js'
+    ])
+    .pipe(gulp.dest('./public/lib/jquery'));
+
+    gulp.src([
+      './node_modules/vegas/dist/vegas.min.css',
+      './node_modules/vegas/dist/vegas.min.js'
+    ])
+    .pipe(gulp.dest('./public/lib/vegas'));
 
   gulp.src([
       './node_modules/sweetalert/dist/sweetalert.min.js'
@@ -66,9 +83,9 @@ gulp.task('dependencies', () => {
 
 
     gulp.src([
-      './node_modules/payform/dist/jquery.payform.min.js'
+      './node_modules/wowjs/dist/wow.min.js'
     ])
-    .pipe(gulp.dest('./public/lib/payform'));
+    .pipe(gulp.dest('./public/lib/wow'));
 
 
   gulp.src([

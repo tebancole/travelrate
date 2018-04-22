@@ -13,8 +13,16 @@
         templateUrl: './components/landingPage/landingPage.view.html',
         data:{
           pageTitle: 'Travel Rate'
-        }
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/landingPage/landingPage.controler.js')
+          }]
+        },
+        controller: 'controladorLanding',
+        controllerAs: 'vm'
       })
+      
 
       .state('logIn', {
         url: '/logIn',
@@ -53,6 +61,25 @@
         data:{
           pageTitle: 'Dashboard'
         }
+      })
+      
+      
+      .state('registrarCliente', {
+        url: '/registrarCliente',
+        templateUrl: './components/cliente/registro/cliente.registro.view.html',
+        data:{
+          pageTitle: 'Registro cliente'
+        },
+        params: {
+          objClienteTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/cliente/registro/cliente.registro.controller.js')
+          }]
+        },
+        controller: 'controladorRegistrarClientes',
+        controllerAs: 'vm'
       })
       
     

@@ -1,68 +1,31 @@
-<div navegacion-Principal></div>
-<div menu-Lateral></div>
-<!-- <section id="dashboard">
-  <div class="fondologin">
-<div class="login-card">
-  <form ng-submit="vm.inicarSesion(vm.usuario)">
-    <div>
-      <h1>Por Favor ingrese su informacion</h1>
-      <label>Correo electrónico</label>
-      <input type="text" ng-model="vm.usuario.correo">
+<header>
+    <img src="../../sources/images/logo.png" alt="" class="wow fadeInUp" ui-sref="landingPage">
+</header>
+<section id="login">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="wrapperlogin">
+                
+                <form class="col-12 row" ng-submit="vm.inicarSesion(vm.usuario)">
+                    <div class="col-md-12">
+                        <input type="text" name="user" placeholder="Correo Electronico" ng-model="vm.usuario.correo" required oninvalid="this.setCustomValidity('Por favor ingrese su correo electrónico')"
+                        oninput="setCustomValidity('')">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="password" name="pass" placeholder="Contraseña" ng-model="vm.usuario.contrasenna" required oninvalid="this.setCustomValidity('Por Favor Ingrese una contraseña')"
+                        oninput="setCustomValidity('')">
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btnlogin">Iniciar sesión</button>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="message">¿No tiene cuenta?
+                            <a ui-sref="registrarCliente"><strong>Crear cuenta</strong></a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div>
-      <label>Contraseña</label>
-      <input type="password" ng-model="vm.usuario.contrasenna">
     </div>
-     <button class="login login-submit" type="submit">Iniciar sesion</button>
-     <button class="login login-submit" type="button" ui-sref="registrarCliente">Registrarse</button>
-    </div>
-  </form>
- </div> 
-</div>
-</section> -->
-
-<!--
-<div class="wrapper">
-  <div class="login-card">
-    <h1>Bienvenido</h1>
-    <h1>Ingrese su informacion</h1><br>
-    <img src="../../sources/images/logo.png" alt="">
-  <form ng-submit="vm.inicarSesion(vm.usuario)">
-    <input type="text" name="user" placeholder="Correo Electronico" ng-model="vm.usuario.correo">
-    <input type="password" name="pass" placeholder="Contraseña" ng-model="vm.usuario.contrasenna">
-    <input type="submit" class="login login-submit" value="Ingresar">
-    <input type="button" class="login login-submit" value="Registrarse" ui-sref="registrarCliente">
-
-</div>
-</div>
--->
-<!--   
-    <h1>Log-in</h1><br>
-  <form>
-    <input type="text" name="user" placeholder="Username">
-    <input type="password" name="pass" placeholder="Password">
-    <input type="submit" name="login" class="login login-submit" value="login">
-  </form>
-    
-  <div class="login-help">
-    <a ui-sref="/registarClientes">Registrarse</a>
-  </div>
-</div> -->
-<div class="imagenfondo">
-<div class="login-page">
-  <div class="form">
-      <img src="" alt="">
-    <form class="login-form" ng-submit="vm.inicarSesion(vm.usuario)">
-      <img src="../../sources/images/logo.png" alt="">
-      <input type="text" name="user" placeholder="Correo Electronico" ng-model="vm.usuario.correo">
-      <input type="password" name="pass" placeholder="Contraseña" ng-model="vm.usuario.contrasenna">
-      <button type="submit">Iniciar sesión</button>
-      <p class="message">¿No tiene cuenta?
-        <a ui-sref="registrarCliente">Crear cuenta</a>
-      </p>
-    </form>
-  </div>
-</div>
-
-</div>
-  
+</section>

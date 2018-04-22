@@ -3,7 +3,6 @@ const UserModel = require('./usuarios.model');
 module.exports.registrar = (req, res) => {
   var newUser = new UserModel({
     cedula              :  req.body.cedula,
-    foto                :  req.body.foto,
     primerNombre        :  req.body.primerNombre,
     segundoNombre       :  req.body.segundoNombre,
     primerApellido      :  req.body.primerApellido,
@@ -11,20 +10,7 @@ module.exports.registrar = (req, res) => {
     correo              :  req.body.correo,
     telefono            :  req.body.telefono,
     fechaNacimiento     :  req.body.fechaNacimiento,
-    provincia           :  req.body.provincia,
-    canton              :  req.body.canton,
-    distrito            :  req.body.distrito,
-    direccionExacta     :  req.body.direccionExacta,
-    tipo                :  req.body.tipo,
-    listaPaquetes       :  req.body.listaPaquetes,
-    sucursalAsignada    :  req.body.sucursalAsignada,
-    puesto              :  req.body.puesto,
-    vehiculo            :  req.body.vehiculo,
-    listaLicencias      :  req.body.listaLicencias,
-    estado              :  req.body.estado,
-    listaTarjetas       :  req.body.listaTarjetas.id,
-    listaPaquetesConvenios    :  req.body.listaPaquetesConvenios,
-    contrasenna         :  req.body.contrasenna,
+    contrasenna         :  req.body.contrasenna
   });
 
   newUser.save((err) => {

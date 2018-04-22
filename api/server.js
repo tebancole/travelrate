@@ -14,7 +14,7 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-    dburl = 'mongodb://TravelRate:HiSSon70+70@ds119489.mlab.com:19489/travelrate',
+    dburl = 'mongodb://tebancole:HiSSon7070@ds117821.mlab.com:17821/travelrate',
     port = 4000;
 
 let server = app.listen(port,_server());
@@ -62,7 +62,7 @@ app.use( (req, res, next) => {
  ///Aqui van agregados todos los componentes amiguitos!!
 const index = require('./index'),
       usuarios = require('./components/usuarios/usuarios.route'),
-      nodeMailer = require('./components/mail/mail.route')
+      nodeMailer = require('./components/mail/mail.route');
       
 
 /**

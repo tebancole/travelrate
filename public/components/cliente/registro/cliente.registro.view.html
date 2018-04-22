@@ -1,0 +1,84 @@
+<header>
+    <img src="../../sources/images/logo.png" alt="" class="wow fadeInUp" ui-sref="landingPage">
+</header>
+
+<section id="registro">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="wrapperregistro">
+
+                <form class="col-12 row text-center" ng-submit="vm.registrarUsuario(vm.nuevoUsuario)">
+
+                    <div class="col-md-3">
+                        <label for="primerNombre">Primer Nombre</label>
+                        <input type="text" class="form-control" id="primerNombre" ng-model="vm.nuevoUsuario.primerNombre" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                        oninput="setCustomValidity('')">
+                    </div>
+                        <div class="col-md-3">
+                        <label for="segundoNombre">Segundo Nombre</label>
+                        <input type="text" class="form-control" ng-model="vm.nuevoUsuario.segundoNombre" id="segundoNombre">
+                    </div>
+                        <div class="col-md-3">
+                        <label for="primerApellido">Primer Apellido</label>
+                        <input type="text" class="form-control" ng-model="vm.nuevoUsuario.primerApellido" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                        oninput="setCustomValidity('')" id="primerApellido">
+                    </div>
+                        <div class="col-md-3">
+                        <label for="segundoApellido">Segundo Apellido</label>
+                        <input type="text" class="form-control" ng-model="vm.nuevoUsuario.segundoApellido" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                        oninput="setCustomValidity('')" id="segundoApellido">
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <label for="cedula">Cédula</label>
+                        <input type="text" class="form-control" ng-model="vm.nuevoUsuario.cedula" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                        oninput="setCustomValidity('')" id="cedula">
+
+                    </div>                        
+                    <div class="col-md-3">
+                        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" ng-model="vm.nuevoUsuario.fechaNacimiento" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                        oninput="setCustomValidity('')" id="fechaNacimiento">
+                    </div>
+                        <div class="col-md-3">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" class="form-control" ng-model="vm.nuevoUsuario.correo" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                        oninput="setCustomValidity('')" id="correo">
+                    </div>
+
+                        <div class="col-md-3">
+                        <label for="telefono">Número de teléfono </label>
+                        <input type="tel" class="form-control" ng-model="vm.nuevoUsuario.telefono" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                        oninput="setCustomValidity('')" id="telefono">
+                    </div>
+
+                    
+
+
+                    <div class="col-md-6">
+                        
+                            <label for="contrasenna">Crear contraseña</label>
+                            <input type="password" class="form-control" ng-model="vm.nuevoUsuario.contrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                            oninput="setCustomValidity('')" id="contrasenna">
+                            
+    
+                        </div>
+                        <div class="col-md-6">
+                        <button type="submit" class="btn">Finalizar Registro</button>
+                    </div>
+
+                    <div class="col-md-12">
+                        <p class="message">¿Ya posee una cuenta?
+                            <a ui-sref="logIn">
+                                <strong>Ingresar</strong>
+                            </a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>

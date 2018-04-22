@@ -6,7 +6,7 @@ module.exports.enviarCorreo = (req, res) =>{
     service: 'gmail',
     auth: {
       user: 'echavarriac@ucenfotec.ac.cr', //CORREO_DEL_EQUIPO
-      pass: 'HiSSOn70+70'        //CONTRASEÑA_DEL_EQUIPO
+      pass: 'HiSSOn70&#43;70'        //CONTRASEÑA_DEL_EQUIPO
     }
   });
 
