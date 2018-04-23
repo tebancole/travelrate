@@ -19,6 +19,8 @@
       let listaUsuarios = servicioUsuarios.getUsuarios();
       let incioExitoso = false;
 
+      
+
       for(let i = 0; i<listaUsuarios.length; i++){
         if(listaUsuarios[i].correo == pCredenciales.correo && listaUsuarios[i].contrasenna == pCredenciales.contrasenna){
           servicioSesion.crear(
@@ -27,8 +29,11 @@
               correo: listaUsuarios[i].correo,
               contrasenna: listaUsuarios[i].contrasenna,
               rol: listaUsuarios[i].rol
+              
             }
+            
           );
+          ('listaUsuarios[i].rol', listaUsuarios[i].rol);
           incioExitoso = true;
         }
       }

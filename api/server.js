@@ -33,7 +33,7 @@ db.on('error', console.error.bind(console, 'Error de conexión: '));
  * Si la conexión es exitosa nos imprime en la consola que se ha establecido conexión con Mongo
  */
 db.once('open', () => {
-  console.log('Base de datos conectada correctamente');
+  ('Base de datos conectada correctamente');
 });
 
 
@@ -79,5 +79,5 @@ app.use('/', index);
 module.exports = app;
 
 function _server(){
-  console.log('Conexión establecida en el puerto ' + port);
+  ('Conexión establecida en el puerto ' + port);
 };

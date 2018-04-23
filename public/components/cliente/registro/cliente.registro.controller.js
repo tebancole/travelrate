@@ -13,7 +13,7 @@
       // vm.rol = servicioUsuarios.getRol();
 
       vm.nuevoCliente = {};
-      let rol = 1;
+      let rol = '1';
     /*
       var map;
       function initMap() {

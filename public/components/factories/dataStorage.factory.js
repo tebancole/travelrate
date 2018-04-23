@@ -28,13 +28,13 @@
       });
 
       peticion.done (usuarios => {
-        console.log ('Datos que vienen desde la base de datos');
-        console.log (usuarios);
+         ('Datos que vienen desde la base de datos');
+         (usuarios);
         listaUsuarios = usuarios;
       });
       peticion.fail (() => {
         listaUsuarios = [];
-        console.log ('Ocurrió un error');
+         ('Ocurrió un error');
       });
 
       return listaUsuarios;
@@ -65,11 +65,11 @@
 
       peticion.done (datos => {
         response = datos.msj;
-        console.log ('Petición realizada con éxito');
+         ('Petición realizada con éxito');
       });
       peticion.fail (error => {
         response = error;
-        console.log ('Ocurrió un error');
+         ('Ocurrió un error');
       });
 
       return response;
@@ -100,11 +100,11 @@
 
       peticion.done((datos) => {
         response = datos.success;
-        console.log('Petición realizada con éxito');
+        ('Petición realizada con éxito');
       });
       peticion.fail (error => {
         response = error;
-        console.log ('Ocurrió un error');
+         ('Ocurrió un error');
       });
 
       return response;

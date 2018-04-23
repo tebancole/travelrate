@@ -8,8 +8,8 @@ class Usuario {
         this.correo = pEmail;
         this.telefono = pTelefono;
         this.fechaNacimiento = pfechaNacimiento;
-        this.contrasenna = pContrasenna
-        this.rol = 1 || 2; 
+        this.contrasenna = pContrasenna;
+        this.rol = 1 || 2
         // 1 usuario, 2 admin
     }
 
