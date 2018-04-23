@@ -23,7 +23,8 @@
             getUsuarios: _getUsuarios,
             actualizarUsuario: _actualizarUsuario,
             getUsuarioActivo:_getUsuarioActivo,
-            addEstado:_addEstado
+            addEstado:_addEstado,
+            getRol: _getRol
             }
         return publicAPI
         
@@ -65,7 +66,7 @@
 
         function _getRol() {
             let session = JSON.parse(sessionStorage.getItem('sesion'));
-            let rol = session.tipo;
+            let rol = session.rol;
             return rol;
         }
 
@@ -77,7 +78,7 @@
             let usuarioActivo = '';
             for (let i = 0; i < listaUsuarios.length; i++) {
                 if(sesion.correo == listaUsuarios[i].correo){
-                    usuarioActivo = listaUsuarios[i].primerNombre +' '+ listaUsuarios[i].segundoNombre +' ' + listaUsuarios[i].primerApellido+' '; 
+                    usuarioActivo = listaUsuarios[i].primerNombre; 
                 }   
                 
             }

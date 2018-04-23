@@ -13,7 +13,7 @@
       // vm.rol = servicioUsuarios.getRol();
 
       vm.nuevoCliente = {};
-      
+      let rol = 1;
     /*
       var map;
       function initMap() {
@@ -24,10 +24,9 @@
       }
     */
   
-
-
+   
       vm.registrarUsuario = (pNuevoUsuario) => {
-        let objNuevoCliente = new Usuario(pNuevoUsuario.cedula, pNuevoUsuario.primerNombre, pNuevoUsuario.segundoNombre, pNuevoUsuario.primerApellido, pNuevoUsuario.segundoApellido, pNuevoUsuario.correo, pNuevoUsuario.telefono, pNuevoUsuario.fechaNacimiento,pNuevoUsuario.contrasenna)
+        let objNuevoCliente = new Usuario(pNuevoUsuario.cedula, pNuevoUsuario.primerNombre, pNuevoUsuario.segundoNombre, pNuevoUsuario.primerApellido, pNuevoUsuario.segundoApellido, pNuevoUsuario.correo, pNuevoUsuario.telefono, pNuevoUsuario.fechaNacimiento,pNuevoUsuario.contrasenna, rol)
   
         let registro = servicioUsuarios.addUsuario(objNuevoCliente);
   
@@ -50,23 +49,23 @@
       }
   
       function calcularEdad () {
-      let dtToday = new Date();
-      let month = dtToday.getMonth() + 1;
-      let day = dtToday.getDate();
-      let year = dtToday.getFullYear();
-      let maxYear = year - 18;
-      if(month < 10)
-          month = '0' + month.toString();
-      if(day < 10)
-          day = '0' + day.toString();
+        let dtToday = new Date();
+        let month = dtToday.getMonth() + 1;
+        let day = dtToday.getDate();
+        let year = dtToday.getFullYear();
+        let maxYear = year - 18;
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+            day = '0' + day.toString();
 
-      let maxDate = maxYear + '-' + month + '-' + day;
-      let minYear = year - 80;
-      let minDate = minYear + '-' + month + '-' + day;
-      alert(maxDate);
-      document.querySelectorAll("#txtDate")[0].setAttribute("max",maxDate);
+        let maxDate = maxYear + '-' + month + '-' + day;
+        let minYear = year - 80;
+        let minDate = minYear + '-' + month + '-' + day;
+        alert(maxDate);
+        document.querySelectorAll("#fechaNacimiento")[0].setAttribute("max",maxDate);
 
-      document.querySelectorAll("#txtDate")[0].setAttribute("min",minDate);
+        document.querySelectorAll("#fechaNacimiento")[0].setAttribute("min",minDate);
     }
 
     }

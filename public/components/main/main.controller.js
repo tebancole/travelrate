@@ -10,7 +10,7 @@
     const vm = this;
 
     vm.rol = servicioUsuarios.getRol();
-    vm.listaPaquetes = servicioUsuarios.getPaquete();
+
 
     vm.cerrarSesion = ()=>{
       servicioLogin.cerrarSesion();

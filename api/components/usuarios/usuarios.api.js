@@ -10,7 +10,8 @@ module.exports.registrar = (req, res) => {
     correo              :  req.body.correo,
     telefono            :  req.body.telefono,
     fechaNacimiento     :  req.body.fechaNacimiento,
-    contrasenna         :  req.body.contrasenna
+    contrasenna         :  req.body.contrasenna,
+    rol                 :  req.body.rol
   });
 
   newUser.save((err) => {
@@ -89,20 +90,6 @@ module.exports.agregar_tarjeta_usuario = function (req, res) {
 
 };
 
-
-module.exports.agregar_paquete = function (req, res) {
-  console.log('listaPaquetes  ' + req.body.listaPaquetes);
-
-  UserModel.update({ _id: req.body._id }, { $push: { 'listaPaquetes': { tracking: req.body.tracking } } },
-      function (error) {
-          if (error) {
-              res.json({ success: false, msg: 'No se ha actualizado el usuario debido al siguiente error: ' + handleError(error) });
-          } else {
-              res.json({ success: true, msg: 'El usuario ha sido modificado con éxito' });
-          }
-
-      })
-    };  
 
   module.exports.buscar_tarjeta_por_id = function (req, res) {
     UserModel.findOne({id: req.body.tarjetaID}).then(

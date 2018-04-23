@@ -12,59 +12,53 @@
                     <div class="col-md-3">
                         <label for="primerNombre">Primer Nombre</label>
                         <input type="text" class="form-control" id="primerNombre" ng-model="vm.nuevoUsuario.primerNombre" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                        oninput="setCustomValidity('')">
+                            oninput="setCustomValidity('')">
                     </div>
-                        <div class="col-md-3">
+                    <div class="col-md-3">
                         <label for="segundoNombre">Segundo Nombre</label>
                         <input type="text" class="form-control" ng-model="vm.nuevoUsuario.segundoNombre" id="segundoNombre">
                     </div>
-                        <div class="col-md-3">
+                    <div class="col-md-3">
                         <label for="primerApellido">Primer Apellido</label>
                         <input type="text" class="form-control" ng-model="vm.nuevoUsuario.primerApellido" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                        oninput="setCustomValidity('')" id="primerApellido">
+                            oninput="setCustomValidity('')" id="primerApellido">
                     </div>
-                        <div class="col-md-3">
+                    <div class="col-md-3">
                         <label for="segundoApellido">Segundo Apellido</label>
                         <input type="text" class="form-control" ng-model="vm.nuevoUsuario.segundoApellido" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                        oninput="setCustomValidity('')" id="segundoApellido">
+                            oninput="setCustomValidity('')" id="segundoApellido">
                     </div>
-
 
                     <div class="col-md-3">
                         <label for="cedula">Cédula</label>
                         <input type="text" class="form-control" ng-model="vm.nuevoUsuario.cedula" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                        oninput="setCustomValidity('')" id="cedula">
+                            oninput="setCustomValidity('')" id="cedula">
 
-                    </div>                        
+                    </div>
                     <div class="col-md-3">
                         <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" ng-model="vm.nuevoUsuario.fechaNacimiento" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                        oninput="setCustomValidity('')" id="fechaNacimiento">
+                        <input type="date" class="form-control" ng-model="vm.nuevoUsuario.fechaNacimiento" required oninvalid="this.setCustomValidity('Es necesario ser mayor de edad para continuar')"
+                            oninput="setCustomValidity('')" id="fechaNacimiento">
                     </div>
-                        <div class="col-md-3">
+                    <div class="col-md-3">
                         <label for="correo">Correo electrónico</label>
                         <input type="email" class="form-control" ng-model="vm.nuevoUsuario.correo" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                        oninput="setCustomValidity('')" id="correo">
+                            oninput="setCustomValidity('')" id="correo">
                     </div>
 
-                        <div class="col-md-3">
+                    <div class="col-md-3">
                         <label for="telefono">Número de teléfono </label>
                         <input type="tel" class="form-control" ng-model="vm.nuevoUsuario.telefono" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                        oninput="setCustomValidity('')" id="telefono">
+                            oninput="setCustomValidity('')" id="telefono">
                     </div>
 
-                    
-
-
                     <div class="col-md-6">
-                        
-                            <label for="contrasenna">Crear contraseña</label>
-                            <input type="password" class="form-control" ng-model="vm.nuevoUsuario.contrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+
+                        <label for="contrasenna">Crear contraseña</label>
+                        <input type="password" class="form-control" ng-model="vm.nuevoUsuario.contrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
                             oninput="setCustomValidity('')" id="contrasenna">
-                            
-    
-                        </div>
-                        <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                         <button type="submit" class="btn">Finalizar Registro</button>
                     </div>
 
@@ -79,6 +73,10 @@
                 </form>
             </div>
         </div>
+        <div class="texts">
+        <h3 class="d-none d-xl-block">Recuerde no compartir su contraseña con <strong>nadie</strong></h3>
     </div>
-
+        <h3 class="d-xl-none">Recuerde no compartir su contraseña con <strong>nadie</strong></h3>
+    </div>
+    
 </section>

@@ -4,10 +4,13 @@
 
   <nav class="">
   <div class="container teal borderYtoX">
-    <a>Registrar</a>
-    <a>ARTICLES</a>
-    <a>PORTFOLIO</a>
+      <button class="float-right d-lg-none" a ui-sref="logIn" ng-click="vm.cerrarSesion()"><i class="fas fa-sign-out-alt"></i></a></button>
+
+    <a ng-show='vm.rol === 2'>Registrar Hotel</a>   
+    <a>Lista de Hoteles</a>
+    <a ng-show='vm.rol === 2'>Registar un Cliente</a>
     <a>ABOUT</a>
     <a>CONTACT</a>
+    <button class="float-right btn d-none d-lg-block" a ui-sref="logIn" ng-click="vm.cerrarSesion()">Cerrar Session</a></button>
   </div>
 </nav>

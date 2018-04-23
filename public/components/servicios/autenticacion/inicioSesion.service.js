@@ -26,8 +26,7 @@
               nombre: listaUsuarios[i].primerNombre,
               correo: listaUsuarios[i].correo,
               contrasenna: listaUsuarios[i].contrasenna,
-              tipo: listaUsuarios[i].tipo,
-              sucursalAsignada: listaUsuarios[i].sucursalAsignada
+              rol: listaUsuarios[i].rol
             }
           );
           incioExitoso = true;

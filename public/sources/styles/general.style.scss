@@ -153,7 +153,7 @@ background: #dc4a00;
     background:rgba(0,0,0,0.2);
     border: 1 solid #dc4a00;;
     border-style: dashed;
-    padding: 15px 15px 45px 15px;
+    padding: 45px 15px 45px 15px;
     width: 90%;
     position: flex;
     margin-top: 80px;
@@ -162,7 +162,11 @@ background: #dc4a00;
 
 .wrapperregistro p {
     color: #6c2400;
-    padding-top: 5px;
+    padding-top: 15px;
+}
+
+.texts h3 {
+    color: black;
 }
 
 .wrapperregistro a {

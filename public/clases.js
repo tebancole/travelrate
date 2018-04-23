@@ -1,5 +1,5 @@
 class Usuario {
-    constructor(pCedula, pPrimerNombre, pSegundoNombre, pPrimerApellido, pSegundoApellido, pEmail, pTelefono, pfechaNacimiento, pContrasenna) {
+    constructor(pCedula, pPrimerNombre, pSegundoNombre, pPrimerApellido, pSegundoApellido, pEmail, pTelefono, pfechaNacimiento, pContrasenna, pRol) {
         this.cedula = pCedula;
         this.primerNombre = pPrimerNombre;
         this.segundoNombre = pSegundoNombre;
@@ -9,6 +9,8 @@ class Usuario {
         this.telefono = pTelefono;
         this.fechaNacimiento = pfechaNacimiento;
         this.contrasenna = pContrasenna
+        this.rol = 1 || 2; 
+        // 1 usuario, 2 admin
     }
 
     obtenerNombreCompleto(){

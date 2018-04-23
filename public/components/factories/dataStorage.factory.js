@@ -59,6 +59,7 @@
           telefono: data.telefono,
           fechaNacimiento: data.fechaNacimiento,
           contrasenna: data.contrasenna,
+          rol: data.rol,
         },
       });
 
@@ -93,6 +94,7 @@
           'telefono': data.telefono,
           'fechaNacimiento': data.fechaNacimiento,
           'contrasenna': data.contrasenna,
+          'rol':data.rol,
         }
       });
 

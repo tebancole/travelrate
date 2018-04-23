@@ -32,12 +32,39 @@ html, body
 
 
 nav {
+
 div.container
 {
     font-family: Raleway;
     margin: 0 auto;
 	padding: 4em 1.5em 1em 1.5em;
 	text-align: center;
+}
+
+.btn{
+    color: white;
+    background: #dc4a00;
+    position: relative;
+    bottom: 50px;
+}
+
+.btn:hover{
+    color: #dc4a00;
+    background: white;
+    position: relative;
+    bottom: 50px;
+}
+
+.fas, button {
+    color: white;
+    background: #dc4a00;
+    bottom: 80px;
+}
+
+.fas, button:hover {
+    color: #dc4a00;
+    background: white;
+    bottom: 80px;
 }
 
 div.container a
