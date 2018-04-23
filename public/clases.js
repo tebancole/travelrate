@@ -22,3 +22,21 @@ class Usuario {
         return provCantDist;
     }
 }
+
+class Hotel {
+    constructor(pNombre, pLatitud, pLongitud, pProvincia, pCanton, pDistrito, pDireccionExacta, pTelServicioCliente, pTelReservaciones, pCorreoReservaciones, pFoto){
+        this.nombre = pNombre;
+        this.latitud = pLatitud;
+        this.longitud = pLongitud;
+        this.provincia = pProvincia;
+        this.canton = pCanton;
+        this.distrito = pDistrito;
+        this.direccionexacta = pDireccionExacta;
+        this.telserviciocliente = pTelServicioCliente;
+        this.telreservaciones = pTelReservaciones;
+        this.correoreservaciones = pCorreoReservaciones;
+        this.foto = pFoto;
+
+    }
+
+}

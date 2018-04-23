@@ -81,6 +81,42 @@
         controller: 'controladorRegistrarClientes',
         controllerAs: 'vm'
       })
+
+      .state('registrarHotel', {
+        url: '/registrarHotel',
+        templateUrl: './components/cliente/registro/cliente.registro.view.html',
+        data:{
+          pageTitle: 'Registro de Hoteles'
+        },
+        params: {
+          objClienteTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/hoteles/registrarHotel/registrarHoteles.controller.js')
+          }]
+        },
+        controller: 'controladorRegistrarHoteles',
+        controllerAs: 'vm'
+      })
+
+      .state('listarHoteles', {
+        url: '/listarHoteles',
+        templateUrl: './components/cliente/registro/cliente.registro.view.html',
+        data:{
+          pageTitle: 'Lista de Hoteles'
+        },
+        params: {
+          objClienteTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/hoteles/listarHotel/listarHoteles.controller.js')
+          }]
+        },
+        controller: 'controladorListarHoteles',
+        controllerAs: 'vm'
+      })
       
     
 

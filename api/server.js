@@ -62,6 +62,7 @@ app.use( (req, res, next) => {
  ///Aqui van agregados todos los componentes amiguitos!!
 const index = require('./index'),
       usuarios = require('./components/usuarios/usuarios.route'),
+      hoteles = require('./components/hoteles/hoteles.route.js'),
       nodeMailer = require('./components/mail/mail.route');
  
       
@@ -73,6 +74,7 @@ const index = require('./index'),
 ///Aqui van agregados todos los componentes amiguitos!!
 app.use('/api', usuarios);
 app.use('/api', nodeMailer);
+app.use('/api', hoteles);
 app.use('/', index);
 
 /// Se guarda todo lo que se ha realizado
