@@ -5,10 +5,10 @@ const mongoose = require('mongoose');
 var HotelSchema = new mongoose.Schema({
   nombre : {type : String, required : true},
   latitud : {type : String, required : true},
-  longitud : {type : String},
+  longitud : {type : String, required : true},
   provincia : {type : String, required : true},
-  canton : {type : String},
-  distrito : {type : String, required : true, unique: true},
+  canton : {type : String, required : true},
+  distrito : {type : String, required : true},
   direccionExacta : {type : String, required : true},
   telServicioCliente : {type : Date, required : true},
   telReservaciones : {type : String, required : true},
@@ -17,5 +17,5 @@ var HotelSchema = new mongoose.Schema({
 });
 
 //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose
-module.exports = mongoose.model('User', HotelSchema); 
+module.exports = mongoose.model('Hotel', HotelSchema); 
 //User va en mayúscula y singular aunque en la bd todo se pone en minúscula y plural
