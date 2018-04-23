@@ -9,7 +9,7 @@ class Usuario {
         this.telefono = pTelefono;
         this.fechaNacimiento = pfechaNacimiento;
         this.contrasenna = pContrasenna;
-        this.rol = 1 || 2
+        this.rol = pRol;
         // 1 usuario, 2 admin
     }
 

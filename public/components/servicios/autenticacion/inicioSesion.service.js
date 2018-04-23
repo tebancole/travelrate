@@ -17,6 +17,7 @@
     function _inicioSesion(pCredenciales) {
       
       let listaUsuarios = servicioUsuarios.getUsuarios();
+      console.log('users', servicioUsuarios.getUsuarios());
       let incioExitoso = false;
 
       
@@ -33,13 +34,15 @@
             }
             
           );
-          ('listaUsuarios[i].rol', listaUsuarios[i].rol);
+          
           incioExitoso = true;
         }
       }
 
       return incioExitoso;
     }
+
+    console.log('prueba', listaUsuarios[i].rol);
     function _cerrarSesion(){
       servicioSesion.destruir();
       swal("Sesión cerrada", "Sesión cerrada correctamente", "success", {

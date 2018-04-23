@@ -41,15 +41,14 @@
             let listaUsuarios = [];
             let listaUsuariosBD = dataStorageFactory.getUsersData();
             listaUsuariosBD.forEach(objUsuario => {
-                ('objUsuario',objUsuario.listaPaquetes);
-                    let objUsuarioTemp = new Usuario(objUsuario.cedula, objUsuario.primerNombre, objUsuario.segundoNombre, objUsuario.primerApellido, objUsuario.segundoApellido, objUsuario.correo, objUsuario.telefono, objUsuario.fechaNacimiento, objUsuario.contrasenna,)
+     
+                    let objUsuarioTemp = new Usuario(objUsuario.cedula, objUsuario.primerNombre, objUsuario.segundoNombre, objUsuario.primerApellido, objUsuario.segundoApellido, objUsuario.correo, objUsuario.telefono, objUsuario.fechaNacimiento, objUsuario.contrasenna, objUsuario.rol)
                 
                     
                     listaUsuarios.push(objUsuarioTemp);
                 });
 
-                ('Datos de la BD convertidos en clases');
-                ('Lista de usuarios ', listaUsuarios);
+
             return listaUsuarios;
         };
 
@@ -66,7 +65,7 @@
 
         function _getRol() {
             let session = JSON.parse(sessionStorage.getItem('sesion'));
-            let rol = session.correo;
+            let rol = session.rol;
             return rol;
         }
 

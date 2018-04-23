@@ -13,7 +13,7 @@
       // vm.rol = servicioUsuarios.getRol();
 
       vm.nuevoCliente = {};
-      let rol = '1';
+    
     /*
       var map;
       function initMap() {
@@ -26,7 +26,7 @@
   
    
       vm.registrarUsuario = (pNuevoUsuario) => {
-        let objNuevoCliente = new Usuario(pNuevoUsuario.cedula, pNuevoUsuario.primerNombre, pNuevoUsuario.segundoNombre, pNuevoUsuario.primerApellido, pNuevoUsuario.segundoApellido, pNuevoUsuario.correo, pNuevoUsuario.telefono, pNuevoUsuario.fechaNacimiento,pNuevoUsuario.contrasenna, rol)
+        let objNuevoCliente = new Usuario(pNuevoUsuario.cedula, pNuevoUsuario.primerNombre, pNuevoUsuario.segundoNombre, pNuevoUsuario.primerApellido, pNuevoUsuario.segundoApellido, pNuevoUsuario.correo, pNuevoUsuario.telefono, pNuevoUsuario.fechaNacimiento,pNuevoUsuario.contrasenna, '1')
   
         let registro = servicioUsuarios.addUsuario(objNuevoCliente);
   

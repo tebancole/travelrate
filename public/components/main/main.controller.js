@@ -10,7 +10,7 @@
     const vm = this;
 
     vm.rol = servicioUsuarios.getRol();
-    ('prueba', servicioUsuarios.getRol());
+    console.log('prueba', servicioUsuarios.getRol());
 
     vm.cerrarSesion = ()=>{
       servicioLogin.cerrarSesion();

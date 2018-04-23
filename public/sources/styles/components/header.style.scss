@@ -120,6 +120,12 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
 
 }
 
+#test img {
+    z-index: -1;
+    position: absolute;
+    width : 100%;
+
+}
 
 // Tarjetas Dashboard
 
