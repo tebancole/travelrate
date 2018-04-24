@@ -208,7 +208,6 @@ background: #dc4a00;
     #map {
         // height: 350px;
         // width: 350px;
-        outline-style: dashed;
         margin: 10px;
 
         .map-responsive{
@@ -241,11 +240,14 @@ background: #dc4a00;
           align-items: center;
     text-align: center;
     color: black;
+        
   }
   
   #registro .home-thumb {
     text-align: center;
   }
+
+  
   
   #registro .btn {
       background: transparent;
@@ -273,3 +275,28 @@ background: #dc4a00;
       color: #242424;
       border-color: transparent;
   }
+
+  #mapreg {
+    .map-responsive{
+        overflow:hidden;
+        padding-bottom:56.25%;
+        position:relative;
+        height:0;
+    }
+    .map-responsive iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+    }
+  }
+
+  .wrapperregistrohotel{
+    background:rgba(255,255,255,0.8);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    position: flex;
+
+}

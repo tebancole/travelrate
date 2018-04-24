@@ -181,7 +181,7 @@
           telreservaciones : data.telreservaciones,
           correoreservaciones : data.correoreservaciones,
           foto : data.foto,
-          rating : data.rating,
+          rating : data.rating
           
         },
       });

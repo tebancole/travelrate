@@ -1,20 +1,19 @@
 <div ng-include="'./components/includes/_header.html'"></div>
 <section id="registro">
     <div class="container">
-        <input places-auto-complete types="['geocode']" on-place-changed="placeMarker()" />
-        <ng-map id="mapa" class="map-responsive" center="{{center}}" zoom="8" on-click="getpos($event)" style='width: 100%; margin: 15px;'>
-            <marker position="{{latlng}}" center='current-position' ondragenter="getpos($event)" animation="Animation.BOUNCE" animation="DROP"
-                draggable="true"></marker>
-        </ng-map>
-        <!-- {{latlng}} -->
-        <div class="col-md-12">
-                <label for="latitud">Latitud</label>
-                <input type="text" id="latitud" data-ng-model="lat">
-                <label for="longitud">Longitud</label>
-                <input type="text" id="longitud" data-ng-model="lng">
-            </div>
+     
 
-        <form class="col-12 row text-center" ng-submit="vm.preRegistrarHotel(vm.nuevoHotel)">
+        <!-- <ng-map id="mapa" class="map-responsive" center="{{center}}" zoom="8" on-click="vm.getpos($event)" style='width: 100%; margin: 15px;'>
+            <marker position="{{latlng}}" center='current-position' ondragenter="getpos($event)" animation="Animation.BOUNCE" animation="DROP"
+                draggable="true"></marker> -->
+   
+        <!-- {{latlng}} -->
+        <h3>Ingrese los datos</h3>
+        <form class="col-12 row text-center wrapperregistrohotel" ng-submit="vm.preRegistrarHotel(vm.nuevoHotel)">
+                
+                <ng-map id="mapreg" class="map-responsive" center="current-location" style='width: 100%; margin: 15px;' zoom="8">
+                        <marker position="current-location" draggable="true" on-dragend="vm.getCurrentLocation($event)" coords="marker.coords" options="marker.options" animation="Animation.BOUNCE" animation="DROP"></marker>
+                      </ng-map>
        
             <div class="col-md-12">
                 <label for="nombreHotel">Nombre del Hotel</label>
@@ -75,7 +74,7 @@
                 <button type="submit" class="btn">Finalizar Registro</button>
             </div>
 
-
+            </form>
     </div>
 
 </section>

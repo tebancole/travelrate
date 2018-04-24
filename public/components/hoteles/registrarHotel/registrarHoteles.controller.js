@@ -12,29 +12,29 @@
         vm.rol = servicioUsuarios.getRol();
         vm.nuevoHotel = {};
 
-        let latitud = document.getElementById("latitud").value;
-        console.log(latitud);
+        // let latitud = document.getElementById("latitud").value;
+        // console.log(latitud);
 
-        $scope.center = ([9.954578985381593, -84.06995176762638]);
-        $scope.latlng = [9.954578985381593, -84.06995176762638];
+        // $scope.center = ([9.954578985381593, -84.06995176762638]);
+        // $scope.latlng = [9.954578985381593, -84.06995176762638];
 
-        $scope.getpos = function (event) {
+        // vm.getpos = function (event) {
 
-            $scope.lat = event.latLng.lat();
-            $scope.lng = event.latLng.lng();
-            $scope.latlng = [event.latLng.lat(), event.latLng.lng()];
+        //     $scope.lat = event.latLng.lat();
+        //     $scope.lng = event.latLng.lng();
+        //     $scope.latlng = [event.latLng.lat(), event.latLng.lng()];
 
-        };
-
-
-        $scope.placeMarker = function () {
-            console.log(this.getPlace());
-            var loc = this.getPlace().geometry.location;
-            $scope.latlng = [loc.lat(), loc.lng()];
-            $scope.center = [loc.lat(), loc.lng()];
+        // };
 
 
-        };
+    //  vm.placeMarker = function () {
+    //         console.log(this.getPlace());
+    //         var loc = this.getPlace().geometry.location;
+    //        $scope.latlng = [loc.lat(), loc.lng()];
+    //        $scope.center = [loc.lat(), loc.lng()];
+
+
+    //     };
 
 
         vm.provincias = $http({
@@ -90,23 +90,32 @@
            });
           }
 
-          vm.registrarHotel = (pNuevoHotel, url) => {
+          NgMap.getMap("map").then((map) => {
+            console.log(map.getCenter());
+            console.log('markers', map.markers);
+            console.log('shapes', map.shapes);
+            vm.map = map;
+          });
+     
+        
+            vm.getCurrentLocation = ($event) => {
+              let postion = [$event.latLng.lat(), $event.latLng.lng()];
+              console.log('poicion actual', postion);
+              vm.current = postion;
+            }
 
-            $scope.getpos = function (event) {
+            vm.registrarHotel = (pNuevoHotel, imgUrl) => {
+              pNuevoHotel.foto = imgUrl;
+              pNuevoHotel.latitud = vm.current[0];
+              pNuevoHotel.longitud = vm.current[1]
 
-                $scope.lat = event.latLng.lat();
-                $scope.lng = event.latLng.lng();
-                $scope.latlng = [event.latLng.lat(), event.latLng.lng()];
-    
-            };
-
-            let lat = $scope.lat;
-            let lng =  $scope.lng;
+              // let lat = pNuevoHotel.latitud.toString();
+              // let lng = pNuevoHotel.longitud.toString();
 
             // let latn = lat.toString();
             // let lngn = lng.toString();
 
-            let objNuevoHotel = new Hotel (pNuevoHotel.nombre, lat, lng, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionExacta, pNuevoHotel.telServicioCliente, pNuevoHotel.telReservaciones, pNuevoHotel.correoReservaciones, url, []) 
+            let objNuevoHotel = new Hotel (pNuevoHotel.nombre, pNuevoHotel.latitud, pNuevoHotel.longitud, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionExacta, pNuevoHotel.telServicioCliente, pNuevoHotel.telReservaciones, pNuevoHotel.correoReservaciones, imgUrl) 
 
        
     
