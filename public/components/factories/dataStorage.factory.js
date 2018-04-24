@@ -11,7 +11,10 @@
       updateUserData: _updateUserData,
       setSession: _setSession,
       closeSession: _closeSession,
-      getSession: _getSession
+      getSession: _getSession,
+      getHotelData: _getHotelData,
+      setHotelData: _setHotelData,
+      updateHotelData: _updateHotelData
     };
     return localAPI;
 
@@ -131,6 +134,106 @@
       return sessionActive;
     }
 
+
+    function _getHotelData () {
+      let listaHoteles = [];
+
+      let peticion = $.ajax ({
+        url: 'http://localhost:4000/api/get_all_hoteles',
+        type: 'get',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: {},
+      });
+
+      peticion.done (hoteles => {
+         ('Datos que vienen desde la base de datos');
+         (hoteles);
+        listaHoteles = hoteles;
+      });
+      peticion.fail (() => {
+        listaHoteles = [];
+         ('Ocurrió un error');
+      });
+
+      return listaHoteles;
+    }
+
+    function _setHotelData (data) {
+      let response;
+
+      let peticion = $.ajax ({
+        url: 'http://localhost:4000/api/save_hotel',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: {
+          nombre : data.nombre,
+          latitud : data.latitud,
+          longitud : data.longitud,
+          provincia : data.provincia,
+          canton : data.canton,
+          distrito : data.distrito,
+          direccionexacta : data.direccionexacta,
+          telserviciocliente : data.telserviciocliente,
+          telreservaciones : data.telreservaciones,
+          correoreservaciones : data.correoreservaciones,
+          foto : data.foto,
+          rating : data.rating,
+          
+        },
+      });
+
+      peticion.done (datos => {
+        response = datos.msj;
+         ('Petición realizada con éxito');
+      });
+      peticion.fail (error => {
+        response = error;
+         ('Ocurrió un error');
+      });
+
+      return response;
+    }
+
+    function _updateHotelData (data) {
+      let response;
+
+      let peticion = $.ajax ({
+        url: 'http://localhost:4000/api/update_hotel',
+        type: 'put',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: {
+          'nombre' : data.nombre,
+          'latitud' : data.latitud,
+          'longitud' : data.longitud,
+          'provincia' : data.provincia,
+          'canton' : data.canton,
+          'distrito' : data.distrito,
+          'direccionexacta' : data.direccionexacta,
+          'telserviciocliente' : data.telserviciocliente,
+          'telreservaciones' : data.telreservaciones,
+          'correoreservaciones' : data.correoreservaciones,
+          'foto' : data.foto,
+          'rating' : data.rating,
+        }
+      });
+
+      peticion.done((datos) => {
+        response = datos.success;
+        ('Petición realizada con éxito');
+      });
+      peticion.fail (error => {
+        response = error;
+         ('Ocurrió un error');
+      });
+
+      return response;
+    }
 
     /**
      * Funcion que obtiene los datos de los usuarios del back end y los retorna

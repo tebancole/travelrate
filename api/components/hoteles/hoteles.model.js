@@ -13,7 +13,8 @@ var HotelSchema = new mongoose.Schema({
   telServicioCliente : {type : Date, required : true},
   telReservaciones : {type : String, required : true},
   correoReservaciones : {type : String, required : true},
-  foto :{type : String, required : true}
+  foto :{type : String, required : true},
+  rating : {type: String, required: true}
 });
 
 //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose

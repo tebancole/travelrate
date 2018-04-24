@@ -24,7 +24,7 @@ class Usuario {
 }
 
 class Hotel {
-    constructor(pNombre, pLatitud, pLongitud, pProvincia, pCanton, pDistrito, pDireccionExacta, pTelServicioCliente, pTelReservaciones, pCorreoReservaciones, pFoto){
+    constructor(pNombre, pLatitud, pLongitud, pProvincia, pCanton, pDistrito, pDireccionExacta, pTelServicioCliente, pTelReservaciones, pCorreoReservaciones, pFoto, pRating){
         this.nombre = pNombre;
         this.latitud = pLatitud;
         this.longitud = pLongitud;
@@ -36,7 +36,8 @@ class Hotel {
         this.telreservaciones = pTelReservaciones;
         this.correoreservaciones = pCorreoReservaciones;
         this.foto = pFoto;
-
+        this.rating = [];
+        
     }
 
 }

@@ -45,9 +45,6 @@ gulp.task('dependencies', () => {
       './node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
       './node_modules/oclazyload/dist/ocLazyLoad.min.js',
       './node_modules/ui-router-page-title/page-title.min.js',
-      
-
-
     ])
     .pipe(gulp.dest('./public/lib/angular/routing'));
 
@@ -93,6 +90,12 @@ gulp.task('dependencies', () => {
     './node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js'
     ])
     .pipe(gulp.dest('./public/lib/ng-file-upload'));
+
+    gulp.src([
+      './node_modules/ngmap/build/scripts/ng-map.min.js'
+    ])
+      .pipe(gulp.dest('./public/lib/ng-map'));
+      
 });
 
 gulp.task('reload', () => {

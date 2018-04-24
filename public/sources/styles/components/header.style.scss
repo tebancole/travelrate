@@ -120,12 +120,19 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
 
 }
 
-#test img {
-    z-index: -1;
-    position: absolute;
-    width : 100%;
-
+#test {
+    background: url('../../sources/images/prueba.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 100%;
+    background-size: contain;
 }
 
+#headerstyles a{
+    text-decoration: none;
+    color: black;
+    line-height: 2px;
+}
 
 

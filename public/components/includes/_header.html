@@ -3,23 +3,21 @@
 
 </header>
 
-<nav class="">
+<nav class="" id="headerstyles">
   <div class="container teal borderYtoX">
-    <button class="float-right d-lg-none" a ui-sref="logIn" ng-click="vm.cerrarSesion()">
+    <button class="float-right d-lg-none" ui-sref="logIn" ng-click="vm.cerrarSesion()">
       <i class="fas fa-sign-out-alt"></i>
-      </a>
+
     </button>
     <div class="justify-content-center">
-      <a ng-show='vm.rol == 2'>Registrar Hotel</a>
+      <a ui-sref="registrarHotel" ng-show='vm.rol == 2'>Registrar Hotel</a>
       <a ng-show='vm.rol == 2 || 1'>Lista de Hoteles</a>
       <a ng-show='vm.rol == 2'>Registar un Cliente</a>
       <a ng-show='vm.rol == 1'>Sobre la Compañía</a>
     </div>
-    <button class="float-right btn d-none d-lg-block" a ui-sref="logIn" ng-click="vm.cerrarSesion()">Cerrar Session</a>
+    <button class="float-right btn d-none d-lg-block" ui-sref="logIn" ng-click="vm.cerrarSesion()">Cerrar Session
     </button>
 
   </div>
 </nav>
-<div id="test">
-  <img src="../../sources/images/prueba.gif" alt="">
-</div>
+<div id="test"></div>
