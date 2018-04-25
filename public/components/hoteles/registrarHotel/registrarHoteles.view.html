@@ -1,20 +1,21 @@
 <div ng-include="'./components/includes/_header.html'"></div>
-<section id="registro">
+<section id="registrohotel">
     <div class="container">
-     
+
 
         <!-- <ng-map id="mapa" class="map-responsive" center="{{center}}" zoom="8" on-click="vm.getpos($event)" style='width: 100%; margin: 15px;'>
             <marker position="{{latlng}}" center='current-position' ondragenter="getpos($event)" animation="Animation.BOUNCE" animation="DROP"
                 draggable="true"></marker> -->
-   
+
         <!-- {{latlng}} -->
         <h3>Ingrese los datos</h3>
-        <form class="col-12 row text-center wrapperregistrohotel" ng-submit="vm.preRegistrarHotel(vm.nuevoHotel)">
-                
-                <ng-map id="mapreg" class="map-responsive" center="current-location" style='width: 100%; margin: 15px;' zoom="8">
-                        <marker position="current-location" draggable="true" on-dragend="vm.getCurrentLocation($event)" coords="marker.coords" options="marker.options" animation="Animation.BOUNCE" animation="DROP"></marker>
-                      </ng-map>
-       
+        <form class="col-12 row text-center wrapperregistrohotel" ng-submit="vm.preEditarHotel(vm.nuevoHotel)">
+
+            <ng-map id="mapreg" class="map-responsive" center="current-location" style='width: 100%; margin: 15px;' zoom="8">
+                <marker position="current-location" draggable="true" on-dragend="vm.getCurrentLocation($event)" coords="marker.coords" options="marker.options"
+                    animation="Animation.BOUNCE" animation="DROP"></marker>
+            </ng-map>
+
             <div class="col-md-12">
                 <label for="nombreHotel">Nombre del Hotel</label>
                 <input type="text" class="form-control" id="nombreHotel" ng-model="vm.nuevoHotel.nombre" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
@@ -61,6 +62,11 @@
                     oninput="setCustomValidity('')">
             </div>
             <div class="col-md-3">
+                <label for="correoServicioCliente">Correo Servicio Cliente</label>
+                <input type="email" class="form-control" id="correoServicioCliente" ng-model="vm.nuevoHotel.correoServicioCliente" required
+                    oninvalid="this.setCustomValidity('Este Campo es Requerido')" oninput="setCustomValidity('')">
+            </div>
+            <div class="col-md-3">
                 <label for="correoReservaciones">Correo Reservaciones</label>
                 <input type="email" class="form-control" id="correoReservaciones" ng-model="vm.nuevoHotel.correoReservaciones" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
                     oninput="setCustomValidity('')">
@@ -70,11 +76,11 @@
                 <input type="file" class="form-control" id="foto" ng-model="vm.nuevoHotel.foto" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
                     oninput="setCustomValidity('')" img-upload>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <button type="submit" class="btn">Finalizar Registro</button>
             </div>
 
-            </form>
+        </form>
     </div>
 
 </section>

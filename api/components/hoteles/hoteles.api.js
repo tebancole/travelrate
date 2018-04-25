@@ -11,6 +11,7 @@ module.exports.registrar = (req, res) => {
     direccionExacta: req.body.direccionExacta,
     telServicioCliente: req.body.telServicioCliente,
     telReservaciones: req.body.telReservaciones,
+    correoServicioCliente: req.body.correoServicioCliente,
     correoReservaciones: req.body.correoReservaciones,
     foto: req.body.foto,
     rating: req.body.rating
@@ -32,7 +33,7 @@ module.exports.listarTodos = (req,res) => {
 };
 
 module.exports.actualizar = (req,res) => {
-  HotelModel.update({correo: req.body.correo}, req.body, (err, user) => {
+  HotelModel.update({_id: req.body._id}, req.body, (err, user) => {
     if (err){
       res.json({success:false,msg:'No se ha actualizado.' + handleError(err)});
 

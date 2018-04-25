@@ -3,16 +3,17 @@ const mongoose = require('mongoose');
 
 //Esquema de usuarios
 var HotelSchema = new mongoose.Schema({
-  nombre : {type : String, required : true},
-  latitud : {type : String, required : true},
-  longitud : {type : String, required : true},
-  provincia : {type : String, required : true},
-  canton : {type : String, required : true},
-  distrito : {type : String, required : true},
-  direccionExacta : {type : String, required : true},
-  telServicioCliente : {type : Date, required : true},
-  telReservaciones : {type : String, required : true},
-  correoReservaciones : {type : String, required : true},
+  nombre : {type : String},
+  latitud : {type : String},
+  longitud : {type : String},
+  provincia : {type : String},
+  canton : {type : String},
+  distrito : {type : String},
+  direccionExacta : {type : String},
+  telServicioCliente : {type : Date},
+  telReservaciones : {type : String},
+  telServicioCliente : {type:String},
+  correoReservaciones : {type : String},
   foto :{type : String, required : true},
   rating : {type: String}
 });

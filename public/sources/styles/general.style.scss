@@ -229,7 +229,7 @@ background: #dc4a00;
 
 // Registro Hotel
 
-#registro {
+#registrohotel {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -243,13 +243,13 @@ background: #dc4a00;
         
   }
   
-  #registro .home-thumb {
+  #registrohotel .home-thumb {
     text-align: center;
   }
 
   
   
-  #registro .btn {
+  #registrohotel .btn {
       background: transparent;
       border: 3px solid black;
       border-radius: 0px;
@@ -262,15 +262,16 @@ background: #dc4a00;
       transition: all 0.4s ease-in-out;
       cursor: pointer;
       margin-top: 25px;
+      padding: 15px;
   }
   
-  #registro .btn:hover {
+  #registrohotel .btn:hover {
     background: white;
     color: #dc4a00;
     border-color: transparent;
   }
   
-  #registro .btn-success {
+  #registrohotel .btn-success {
       background: white;
       color: #242424;
       border-color: transparent;
@@ -300,3 +301,247 @@ background: #dc4a00;
     position: flex;
 
 }
+
+// Tarjetas 
+.card {
+
+}
+.card-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.card-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+
+.wrapper{
+  padding: 2px 0 5px 0;
+  border: 1px solid dashed;
+    width: 200px;
+    height: 100%;
+    background: white;
+    margin: auto;
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0;
+    transform: scale(0.95);
+    transition: box-shadow 0.5s, transform 0.5s;
+    &:hover{
+      transform: scale(1);
+      box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+    }
+    h4 {
+      font-size: 16px;
+    }
+    i{
+      cursor: pointer;
+    }
+    
+    .container{
+      width:100%;
+      height:100%;
+      .top{
+        height: 80%;
+        width:100%;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+      }
+      .bottom{
+        width: 160px;
+        height: 40%;
+        transition: transform 0.5s;
+        &.clicked{
+          transform: translateX(-50%);
+        }
+        h1{
+            margin:0;
+            padding:0;
+            font-size: 18px;
+        }
+        p{
+            margin:0;
+            padding:0;
+        }
+
+      }
+    }
+    
+    .inside{
+      z-index:9;
+    border: 1px solid #dc4a00;
+    background: #dc4a00;
+      width:140px;
+      height:140px;
+      position: absolute;
+      top: -70px;
+      right: -70px;
+      border-radius: 0px 0px 200px 200px;
+      transition: all 0.5s, border-radius 2s, top 1s;
+      overflow: hidden;
+      .icon{
+        position:absolute;
+        right:85px;
+        top:85px;
+        color:white;
+        opacity: 1;
+      }
+      &:hover{
+        width:100%;
+        right:0;
+        top:0;
+        border-radius: 0;
+        height:100%;
+        .icon{
+          opacity: 0;
+          right:15px;
+          top:15px;
+        }
+        .contents{
+          opacity: 1;
+          transform: scale(1);
+          transform: translateY(0);
+        }
+      }
+      .contents{
+        padding: 5%;
+        opacity: 0;
+        transform: scale(0.5);
+        transform: translateY(-200%);
+        transition: opacity 0.2s, transform 0.8s;
+        table{
+          text-align:left;
+          width:100%;
+        }
+        h1, p, table{
+          color: white;
+        }
+        p{
+          font-size:13px;
+        }
+      }
+    }
+  }
+
+  #listaHoteles {
+    .btn {
+      background: #dc4a00;
+      border: 1px solid black;
+      border-radius: 0px;
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 36px;
+      margin: 5px auto;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+      cursor: pointer;
+    }
+
+    p{
+      margin: 0;
+    }
+
+     .btn:hover {
+      background: #dc4a00;
+      color: #ffffff;
+      border-color: transparent;
+    }
+    
+  }
+
+  //editar
+
+  #editar .btn {
+    background: transparent;
+    border: 3px solid black;
+    border-radius: 0px;
+    color: white;
+    background:  #dc4a00;
+    font-weight: 700;
+    letter-spacing: 1px;
+      width: 100%;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    margin-top: 25px;
+    padding: 15px;
+    
+}
+
+#editar .btn:hover {
+  background: white;
+  color: #dc4a00;
+  border-color: transparent;
+}
+
+.wrapperregistro{
+    background:rgba(0,0,0,0.2);
+    border: 1 solid #dc4a00;;
+    border-style: dashed;
+    padding: 45px 15px 45px 15px;
+    width: 90%;
+    position: flex;
+    margin-top: 80px;
+
+}
+
+.wrapperregistro p {
+    color: #6c2400;
+    padding-top: 15px;
+}
+
+.texts h3 {
+    color: black;
+}
+
+.wrapperregistro a {
+ cursor: pointer;
+}
+
+.wrapperregistro label {
+    color: white;
+   }
+
+.wrapperregistro input{
+    text-align:center;
+    background: transparent;
+    border: 1px solid #dc4a00;
+    border-radius: 4px;
+    color: #6c2400;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding: 14px 12px;
+  margin-bottom: 10px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+
+}
+
+#mapedit {
+  .map-responsive{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+  }
+  .map-responsive iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+  }
+}
+

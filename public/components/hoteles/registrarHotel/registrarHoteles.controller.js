@@ -90,18 +90,16 @@
            });
           }
 
-          NgMap.getMap("map").then((map) => {
+          NgMap.getMap("mapreg").then((map) => {
             console.log(map.getCenter());
-            console.log('markers', map.markers);
-            console.log('shapes', map.shapes);
             vm.map = map;
           });
      
         
             vm.getCurrentLocation = ($event) => {
-              let postion = [$event.latLng.lat(), $event.latLng.lng()];
-              console.log('poicion actual', postion);
-              vm.current = postion;
+              let position = [$event.latLng.lat(), $event.latLng.lng()];
+              console.log('posicion actual', position);
+              vm.current = position;
             }
 
             vm.registrarHotel = (pNuevoHotel, imgUrl) => {
@@ -115,7 +113,7 @@
             // let latn = lat.toString();
             // let lngn = lng.toString();
 
-            let objNuevoHotel = new Hotel (pNuevoHotel.nombre, pNuevoHotel.latitud, pNuevoHotel.longitud, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionExacta, pNuevoHotel.telServicioCliente, pNuevoHotel.telReservaciones, pNuevoHotel.correoReservaciones, imgUrl) 
+            let objNuevoHotel = new Hotel (pNuevoHotel.nombre, pNuevoHotel.latitud, pNuevoHotel.longitud, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionExacta, pNuevoHotel.telServicioCliente, pNuevoHotel.telReservaciones, pNuevoHotel.correoReservaciones, pNuevoHotel.correoReservaciones, imgUrl) 
 
        
     

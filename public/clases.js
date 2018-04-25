@@ -12,19 +12,11 @@ class Usuario {
         this.rol = pRol;
         // 1 usuario, 2 admin
     }
-
-    obtenerNombreCompleto(){
-        let nombreCompleto = this.primerNombre + ' ' + this.segundoNombre + ' ' + this.primerApellido + ' ';
-        return nombreCompleto;
-    }
-    obtenerDatosProvCantDist(){
-        let provCantDist = this.provincia + ', ' + this.canton + ', ' + this.distrito + ' ';
-        return provCantDist;
-    }
 }
 
 class Hotel {
-    constructor(pNombre, pLatitud, pLongitud, pProvincia, pCanton, pDistrito, pDireccionExacta, pTelServicioCliente, pTelReservaciones, pCorreoReservaciones, pFoto, pRating){
+    constructor(pNombre, pLatitud, pLongitud, pProvincia, pCanton, pDistrito, pDireccionExacta, pTelServicioCliente, pTelReservaciones,pCorreoServicioCliente, pCorreoReservaciones, pFoto, pRating){
+        this._id = 0;
         this.nombre = pNombre;
         this.latitud = pLatitud;
         this.longitud = pLongitud;
@@ -34,10 +26,15 @@ class Hotel {
         this.direccionexacta = pDireccionExacta;
         this.telserviciocliente = pTelServicioCliente;
         this.telreservaciones = pTelReservaciones;
+        this.correoserviciocliente = pCorreoServicioCliente;
         this.correoreservaciones = pCorreoReservaciones;
         this.foto = pFoto;
         this.rating = [];
         
     }
+    
+    setId(pId) {
+        this._id = pId;
+      }
 
 }

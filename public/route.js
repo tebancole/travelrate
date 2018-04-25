@@ -121,7 +121,7 @@
       
       .state('editarHoteles', {
         url: '/editarHoteles',
-        templateUrl: './components/hoteles/editarHotel/editarHoteels.view.html',
+        templateUrl: './components/hoteles/editarHotel/editarHoteles.view.html',
         data:{
           pageTitle: 'Editar Hotel'
         },
@@ -130,12 +130,32 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/hoteles/editarHotel/editaHoteles.controller.js')
+            return $ocLazyLoad.load('./components/hoteles/editarHotel/editarHoteles.controller.js')
           }]
         },
         controller: 'controladorEditarHoteles',
         controllerAs: 'vm'
       })
+
+      .state('evaularHotel', {
+        url: '/evaularHotel',
+        templateUrl: './components/hoteles/evaularHotel/evaularHotel.view.html',
+        data:{
+          pageTitle: 'Evaular Hotel'
+        },
+        params: {
+          objHotelTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/hoteles/evaularHotel/evaularHotel.controller.js')
+          }]
+        },
+        controller: 'controladorEvaularHoteles',
+        controllerAs: 'vm'
+      })
+      
+      
       
       
     
