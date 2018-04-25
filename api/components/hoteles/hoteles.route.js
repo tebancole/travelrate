@@ -32,14 +32,14 @@ router.route('/get_all_hoteles')
  * Función que actualiza los usuarios
  */
 
-router.route('/update_hotel')
+router.route('/actualizar_hotel')
   .put((req, res) => {
     hoteles.actualizar(req,res);
 });
 
 router.route('/buscar_hotel_id')
   .post(function (req, res) {
-    hoteles.buscar_usuario_por_id(req, res);
+    hoteles.buscar_hoteles_por_id(req, res);
   });
 
 module.exports = router;

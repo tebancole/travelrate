@@ -4,13 +4,16 @@
         .module('travelrate')
         .controller('controladorRegistrarHoteles', controladorRegistrarHoteles);
 
-    controladorRegistrarHoteles.$inject = ['$http', '$state', '$stateParams', '$location', 'servicioHoteles', 'imageService', 'Upload', 'NgMap', 'servicioUsuarios', '$scope'];
+    controladorRegistrarHoteles.$inject = ['$http', '$state', '$location', 'servicioHoteles', 'imageService', 'Upload', 'NgMap', 'servicioUsuarios'];
 
-    function controladorRegistrarHoteles($http, $state, $stateParams, $location, servicioHoteles, imageService, Upload, NgMap, servicioUsuarios, $scope) {
+    function controladorRegistrarHoteles($http, $state, $location, servicioHoteles, imageService, Upload, NgMap, servicioUsuarios) {
         let vm = this;
 
         vm.rol = servicioUsuarios.getRol();
         vm.nuevoHotel = {};
+
+        let idRandom = getRandom();
+        console.log(getRandom());
 
         // let latitud = document.getElementById("latitud").value;
         // console.log(latitud);
@@ -35,7 +38,6 @@
 
 
     //     };
-
 
         vm.provincias = $http({
             method: 'GET',
@@ -91,7 +93,7 @@
           }
 
           NgMap.getMap("mapreg").then((map) => {
-            console.log(map.getCenter());
+        
             vm.map = map;
           });
      
@@ -100,20 +102,18 @@
               let position = [$event.latLng.lat(), $event.latLng.lng()];
               console.log('posicion actual', position);
               vm.current = position;
+              
             }
 
+            
+
             vm.registrarHotel = (pNuevoHotel, imgUrl) => {
+              pNuevoHotel.id = idRandom;
               pNuevoHotel.foto = imgUrl;
               pNuevoHotel.latitud = vm.current[0];
               pNuevoHotel.longitud = vm.current[1]
 
-              // let lat = pNuevoHotel.latitud.toString();
-              // let lng = pNuevoHotel.longitud.toString();
-
-            // let latn = lat.toString();
-            // let lngn = lng.toString();
-
-            let objNuevoHotel = new Hotel (pNuevoHotel.nombre, pNuevoHotel.latitud, pNuevoHotel.longitud, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionExacta, pNuevoHotel.telServicioCliente, pNuevoHotel.telReservaciones, pNuevoHotel.correoReservaciones, pNuevoHotel.correoReservaciones, imgUrl) 
+            let objNuevoHotel = new Hotel (pNuevoHotel.id, pNuevoHotel.nombre, pNuevoHotel.latitud, pNuevoHotel.longitud, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionexacta, pNuevoHotel.telserviciocliente, pNuevoHotel.telreservaciones, pNuevoHotel.correoserviciocliente, pNuevoHotel.correoreservaciones, imgUrl) 
 
        
     
@@ -123,8 +123,8 @@
                 swal("Registro exitoso", "Hotel registrado con exito", "success", {
 
                 button: "Aceptar",});
-
-                vm.nuevoHotel = null;
+                $location.path('/listarHoteles');
+                // vm.nuevoHotel = null;
 
             } else {
                 swal("Registro fallido", "Ha ocurrido un error, intente nuevamente", "error", {
@@ -136,27 +136,15 @@
             };
         
 
+    function getRandom() {
+      let randomID = (
+        document.getElementById('fieldid').value = Math.floor(Math.random() * 100000));
+      let randomToString = randomID.toString(36).substring(7);
+        
+      return randomToString;
+      console.log('randomID', randomToString);
+    }
 
-        //   app.controller('MainCtrl', ['$scope', '$http', '$locale',
-        //       function ($scope, $http, $locale) {
-
-        //           $scope.center = [45.026950,15.205764];
-        //           $scope.latlng = [45.026950, 15.205764];
-        //           $scope.getpos = function (event) {
-        //               $scope.lat = event.latLng.lat();
-        //               $scope.lng = event.latLng.lng();
-        //               $scope.latlng = [event.latLng.lat(), event.latLng.lng()];
-        //           };
-
-
-        //           $scope.placeMarker = function(){
-        //               console.log(this.getPlace());  
-        //               var loc = this.getPlace().geometry.location;
-        //               $scope.latlng = [loc.lat(), loc.lng()];
-        //               $scope.center = [loc.lat(), loc.lng()];
-        //           };
-
-        //       }]);
 
     }
 })();

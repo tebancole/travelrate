@@ -48,29 +48,3 @@ module.exports.buscar_usuario_por_id = function(req, res){
 };
 
 
-module.exports.agregar_tarjeta_usuario = function (req, res) {
-
-  UserModel.update(
-    { _id: req.body._id },
-    {
-      $push:
-        {
-          'listaTarjetas':
-            {
-              id: req.body.id,
-              tarjetaID: req.body.tarjetaID
-            }
-        }
-    },
-    function (error) {
-      if (error) {
-        res.json({
-          success: false, msg: 'No se ha actualizado el usuario debido al siguiente error: ' + handleError(error)
-        });
-      } else {
-        res.json({ success: true, msg: 'El usuario ha sido modificado con éxito' });
-      }
-
-    });
-
-};

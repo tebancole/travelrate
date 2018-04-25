@@ -9,7 +9,9 @@
 
         <!-- {{latlng}} -->
         <h3>Ingrese los datos</h3>
-        <form class="col-12 row text-center wrapperregistrohotel" ng-submit="vm.preEditarHotel(vm.nuevoHotel)">
+        <form class="col-12 row text-center wrapperregistrohotel" ng-submit="vm.preRegistrarHotel(vm.nuevoHotel)">
+
+            <input type="text" name="fieldid" id="fieldid" class="" ng-model="vm.nuevoHotel.id" hidden/>
 
             <ng-map id="mapreg" class="map-responsive" center="current-location" style='width: 100%; margin: 15px;' zoom="8">
                 <marker position="current-location" draggable="true" on-dragend="vm.getCurrentLocation($event)" coords="marker.coords" options="marker.options"
@@ -47,28 +49,27 @@
                 </datalist>
             </div>
             <div class="col-md-6">
-                <label for="direccionExacta">Direccion Exacta</label>
-                <input type="text" class="form-control" id="direccionExacta" ng-model="vm.nuevoHotel.direccionExacta" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                <label for="direccionexacta">Direccion Exacta</label>
+                <input type="text" class="form-control" id="direccionexacta" ng-model="vm.nuevoHotel.direccionexacta" required oninvalid="this.setCustomValidity('Este Campo es Requerido')" oninput="setCustomValidity('')">
+            </div>
+            <div class="col-md-3">
+                <label for="telserviciocliente">Telefono Servicio Cliente</label>
+                <input type="text" class="form-control" id="telserviciocliente" ng-model="vm.nuevoHotel.telserviciocliente" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
                     oninput="setCustomValidity('')">
             </div>
             <div class="col-md-3">
-                <label for="telServicioCliente">Telefono Servicio Cliente</label>
-                <input type="tel" class="form-control" id="telServicioCliente" ng-model="vm.nuevoHotel.telServicioCliente" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                <label for="telreservaciones">Telefono Reservaciones</label>
+                <input type="text" class="form-control" id="telreservaciones" ng-model="vm.nuevoHotel.telreservaciones" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
                     oninput="setCustomValidity('')">
             </div>
             <div class="col-md-3">
-                <label for="telReservaciones">Telefono Reservaciones</label>
-                <input type="tel" class="form-control" id="telReservaciones" ng-model="vm.nuevoHotel.telReservaciones" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                    oninput="setCustomValidity('')">
-            </div>
-            <div class="col-md-3">
-                <label for="correoServicioCliente">Correo Servicio Cliente</label>
-                <input type="email" class="form-control" id="correoServicioCliente" ng-model="vm.nuevoHotel.correoServicioCliente" required
+                <label for="correoserviciocliente">Correo Servicio Cliente</label>
+                <input type="email" class="form-control" id="correoserviciocliente" ng-model="vm.nuevoHotel.correoserviciocliente" required
                     oninvalid="this.setCustomValidity('Este Campo es Requerido')" oninput="setCustomValidity('')">
             </div>
             <div class="col-md-3">
-                <label for="correoReservaciones">Correo Reservaciones</label>
-                <input type="email" class="form-control" id="correoReservaciones" ng-model="vm.nuevoHotel.correoReservaciones" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                <label for="correoreservaciones">Correo Reservaciones</label>
+                <input type="email" class="form-control" id="correoreservaciones" ng-model="vm.nuevoHotel.correoreservaciones" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
                     oninput="setCustomValidity('')">
             </div>
             <div class="col-md-3">

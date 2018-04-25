@@ -118,10 +118,8 @@
       sessionStorage.setItem ('session', JSON.stringify (value));
       return response;
     }
-
-    /**
-     * Función que elimina los datos de la sesión activa
-     */
+    // Sesion activa!
+    
     function _closeSession () {
       let response = true;
       sessionStorage.removeItem ('session');
@@ -148,13 +146,10 @@
       });
 
       peticion.done (hoteles => {
-         ('Datos que vienen desde la base de datos');
-         (hoteles);
         listaHoteles = hoteles;
       });
       peticion.fail (() => {
         listaHoteles = [];
-         ('Ocurrió un error');
       });
 
       return listaHoteles;
@@ -170,17 +165,18 @@
         dataType: 'json',
         async: false,
         data: {
+          id : data.id,
           nombre : data.nombre,
           latitud : data.latitud,
           longitud : data.longitud,
           provincia : data.provincia,
           canton : data.canton,
           distrito : data.distrito,
-          direccionExacta : data.direccionExacta,
-          telServicioCliente : data.telServicioCliente,
-          telReservaciones : data.telReservaciones,
-          correoServicioCliente : data.correoServicioCliente,
-          correoReservaciones : data.correoReservaciones,
+          direccionexacta : data.direccionexacta,
+          telserviciocliente : data.telserviciocliente,
+          telreservaciones : data.telreservaciones,
+          correoserviciocliente : data.correoserviciocliente,
+          correoreservaciones : data.correoreservaciones,
           foto : data.foto,
           rating : data.rating,
           
@@ -189,11 +185,9 @@
 
       peticion.done (datos => {
         response = datos.msj;
-         ('Petición realizada con éxito');
       });
       peticion.fail (error => {
         response = error;
-         ('Ocurrió un error');
       });
 
       return response;
@@ -203,47 +197,38 @@
       let response;
 
       let peticion = $.ajax ({
-        url: 'http://localhost:4000/api/update_hotel',
+        url: 'http://localhost:4000/api/actualizar_hotel',
         type: 'put',
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
         dataType: 'json',
         async: false,
         data: {
-          'nombre' : data.nombre,
-          'latitud' : data.latitud,
-          'longitud' : data.longitud,
-          'provincia' : data.provincia,
-          'canton' : data.canton,
-          'distrito' : data.distrito,
-          'direccionExacta' : data.direccionExacta,
-          'telServicioCliente' : data.telServicioCliente,
-          'telReservaciones' : data.telReservaciones,
-          'correoServicioCliente' : data.correoServicioCliente,
-          'correoReservaciones' : data.correoReservaciones,
-          'foto' : data.foto,
-          'rating' : data.rating,
+          id: data.id,
+          nombre : data.nombre,
+          latitud : data.latitud,
+          longitud : data.longitud,
+          provincia : data.provincia,
+          canton : data.canton,
+          distrito : data.distrito,
+          direccionexacta : data.direccionexacta,
+          telserviciocliente : data.telserviciocliente,
+          telreservaciones : data.telreservaciones,
+          correoserviciocliente : data.correoserviciocliente,
+          correoreservaciones : data.correoreservaciones,
+          foto : data.foto,
+          rating : data.rating,
         }
       });
 
       peticion.done((datos) => {
         response = datos.success;
-        ('Petición realizada con éxito');
       });
       peticion.fail (error => {
         response = error;
-         ('Ocurrió un error');
       });
 
       return response;
     }
-
-    /**
-     * Funcion que obtiene los datos de los usuarios del back end y los retorna
-     */
-
-    //
-    //Inicio usuarios
-    //
 
   }
   

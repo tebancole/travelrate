@@ -1,23 +1,24 @@
 const HotelModel = require('./hoteles.model');
 
 module.exports.registrar = (req, res) => {
-  var newHotel = new HotelModel({
+  var nuevoHotel = new HotelModel({
+    id: req.body.id,
     nombre: req.body.nombre,
     latitud: req.body.latitud,
     longitud: req.body.longitud,
     provincia: req.body.provincia,
     canton: req.body.canton,
     distrito: req.body.distrito,
-    direccionExacta: req.body.direccionExacta,
-    telServicioCliente: req.body.telServicioCliente,
-    telReservaciones: req.body.telReservaciones,
-    correoServicioCliente: req.body.correoServicioCliente,
-    correoReservaciones: req.body.correoReservaciones,
+    direccionexacta: req.body.direccionexacta,
+    telserviciocliente: req.body.telserviciocliente,
+    telreservaciones: req.body.telreservaciones,
+    correoserviciocliente: req.body.correoserviciocliente,
+    correoreservaciones: req.body.correoreservaciones,
     foto: req.body.foto,
     rating: req.body.rating
   });
 
-  newHotel.save((err) => {
+  nuevoHotel.save((err) => {
     if(err){
       res.json({success:false, msj: 'Ha ocurrido un error en el registro de hoteles' + err});
     }else{
@@ -33,7 +34,7 @@ module.exports.listarTodos = (req,res) => {
 };
 
 module.exports.actualizar = (req,res) => {
-  HotelModel.update({_id: req.body._id}, req.body, (err, user) => {
+  HotelModel.update({id: req.body.id}, req.body, (err, user) => {
     if (err){
       res.json({success:false,msg:'No se ha actualizado.' + handleError(err)});
 
@@ -43,37 +44,12 @@ module.exports.actualizar = (req,res) => {
   });
 };
 
-module.exports.buscar_hoteles_por_id = function(req, res){
-  HotelModel.findById({_id : req.body.id}).then(
-      function(hoteles){
-          res.send(hoteles);
-      });
-};
+// module.exports.buscar_hoteles_por_id = function(req, res){
+//   HotelModel.findById({_id : req.body.id}).then(
+//       function(hoteles){
+//           res.send(hoteles);
+//       });
+// };
 
 
-module.exports.agregar_tarjeta_hoteles = function (req, res) {
 
-  HotelModel.update(
-    { _id: req.body._id },
-    {
-      $push:
-        {
-          'listaTarjetas':
-            {
-              id: req.body.id,
-              tarjetaID: req.body.tarjetaID
-            }
-        }
-    },
-    function (error) {
-      if (error) {
-        res.json({
-          success: false, msg: 'No se ha actualizado el hoteles debido al siguiente error: ' + handleError(error)
-        });
-      } else {
-        res.json({ success: true, msg: 'El hoteles ha sido modificado con éxito' });
-      }
-
-    });
-
-};

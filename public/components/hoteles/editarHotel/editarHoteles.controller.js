@@ -11,9 +11,7 @@
 
       vm.rol = servicioUsuarios.getRol();
 
-      vm.modificarHotel = {};
-
-      vm.objNuevoHotel = {};
+     
 
       vm.provincias = $http({
         method: 'GET',
@@ -59,15 +57,6 @@
         });
       }
 
-      vm.cloudObj = imageService.getConfiguration();
-
-          vm.preEditarHotel = (pNuevoHotel) => {
-            vm.cloudObj.data.file = pNuevoHotel.foto[0];
-            Upload.upload(vm.cloudObj).success((data) =>{
-              vm.modificarHotel(pNuevoHotel, data.url);
-           });
-          }
-
           NgMap.getMap("mapedit").then((map) => {
             console.log(map.getCenter());
             vm.map = map;
@@ -81,28 +70,41 @@
           }
         
 
+          vm.modificarHotel = {};
 
       let objHotelAModificar = JSON.parse($stateParams.objHotelTemp);
       // vm.objNuevoHotel.setId(objHotelAModificar._id);
 
-      vm.objNuevoHotel = new Hotel(objHotelAModificar.nombre, objHotelAModificar.latitud, objHotelAModificar.longitud, objHotelAModificar.provincia, objHotelAModificar.canton, objHotelAModificar.distrito,objHotelAModificar.direccionexacta, objHotelAModificar.telserviciocliente, objHotelAModificar.telreservaciones, objHotelAModificar.correoserviciocliente, objHotelAModificar.correoreservaciones, objHotelAModificar.foto);
+      let objNuevoHotel = new Hotel(objHotelAModificar.id, objHotelAModificar.nombre, objHotelAModificar.latitud, objHotelAModificar.longitud, objHotelAModificar.provincia, objHotelAModificar.canton, objHotelAModificar.distrito,objHotelAModificar.direccionexacta, objHotelAModificar.telserviciocliente, objHotelAModificar.telreservaciones, objHotelAModificar.correoserviciocliente, objHotelAModificar.correoreservaciones, objHotelAModificar.foto);
 
       vm.center = [objHotelAModificar.latitud, objHotelAModificar.longitud];
+      
+      vm.modificarHotel.id = objNuevoHotel.id;
+      vm.modificarHotel.nombre = objNuevoHotel.nombre;
+      vm.modificarHotel.latitud = objNuevoHotel.latitud;
+      vm.modificarHotel.longitud = objNuevoHotel.longitud;
+      vm.modificarHotel.provincia = objNuevoHotel.provincia;
+      vm.modificarHotel.canton = objNuevoHotel.canton;
+      vm.modificarHotel.distrito = objNuevoHotel.distrito;
+      vm.modificarHotel.direccionexacta = objNuevoHotel.direccionexacta;
+      vm.modificarHotel.telserviciocliente = objNuevoHotel.telserviciocliente;
+      vm.modificarHotel.telreservaciones = objNuevoHotel.telreservaciones;
+      vm.modificarHotel.correoserviciocliente = objNuevoHotel.correoserviciocliente;
+      vm.modificarHotel.correoreservaciones = objNuevoHotel.correoreservaciones;
+      vm.modificarHotel.foto = objNuevoHotel.foto;
 
-      // vm.modificarHotel.nombre = objNuevoHotel.nombre;
-      // vm.modificarHotel.latitud = objNuevoHotel.latitud;
-      // vm.modificarHotel.longitud = objNuevoHotel.longitud;
-      // vm.modificarHotel.provincia = objNuevoHotel.provincia;
-      // vm.modificarHotel.canton = objNuevoHotel.canton;
-      // vm.modificarHotel.distrito = objNuevoHotel.distrito;
-      // vm.modificarHotel.direccionExacta = objNuevoHotel.direccionexacta;
-      // vm.modificarHotel.telServicioCliente = objNuevoHotel.telServicioCliente;
-      // vm.modificarHotel.telReservaciones = objNuevoHotel.telReservaciones;
-      // vm.modificarHotel.correoServicioCliente = objNuevoHotel.correoServicioCliente;
-      // vm.modificarHotel.correoReservaciones = objNuevoHotel.correoReservaciones;
-      // vm.modificarHotel.foto = objNuevoHotel.foto;
+      
+      vm.cloudObj = imageService.getConfiguration();
 
-      vm.modificarHotel = (pHotel, imgUrl) => {
+          vm.preEditarHotel = (pNuevoHotel) => {
+            vm.cloudObj.data.file = pNuevoHotel.foto[0];
+            Upload.upload(vm.cloudObj).success((data) =>{
+              vm.editarHotel(pNuevoHotel, data.url);
+           });
+          }
+
+
+      vm.editarHotel = (pHotel, imgUrl) => {
         let listaHoteles = servicioHoteles.getHotel();
         pHotel.foto = imgUrl;
         pHotel.latitud = vm.current[0];
@@ -114,18 +116,19 @@
         // }
 
         listaHoteles.forEach(objHotel => {
-          if (objHotel._id == vm.objNuevoHotel._id) {
+          if (objHotel.id == vm.objNuevoHotel.id) {
+            objHotel.id = pHotel.id;
             objHotel.nombre = pHotel.nombre;
             objHotel.latitud = pHotel.latitud;
             objHotel.longitud = pHotel.longitud;
             objHotel.provincia = pHotel.provincia;
             objHotel.canton = pHotel.canton;
             objHotel.distrito = pHotel.distrito;
-            objHotel.direccionExacta = pHotel.direccionExacta;
-            objHotel.telServicioCliente = pHotel.telServicioCliente;
-            objHotel.correoServicioCliente = pHotel.correoServicioCliente;
-            objHotel.telReservaciones = pHotel.telReservaciones;
-            objHotel.correoReservaciones = pHotel.correoReservaciones;
+            objHotel.direccionexacta = pHotel.direccionexacta;
+            objHotel.telserviciocliente = pHotel.telserviciocliente;
+            objHotel.correoserviciocliente = pHotel.correoserviciocliente;
+            objHotel.telreservaciones = pHotel.telreservaciones;
+            objHotel.correoreservaciones = pHotel.correoreservaciones;
             objHotel.foto = pHotel.foto;
 
             servicioHoteles.actualizarHotel(objHotel);

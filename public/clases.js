@@ -15,26 +15,22 @@ class Usuario {
 }
 
 class Hotel {
-    constructor(pNombre, pLatitud, pLongitud, pProvincia, pCanton, pDistrito, pDireccionExacta, pTelServicioCliente, pTelReservaciones,pCorreoServicioCliente, pCorreoReservaciones, pFoto, pRating){
-        this._id = 0;
-        this.nombre = pNombre;
-        this.latitud = pLatitud;
-        this.longitud = pLongitud;
-        this.provincia = pProvincia;
-        this.canton = pCanton;
-        this.distrito = pDistrito;
-        this.direccionexacta = pDireccionExacta;
-        this.telserviciocliente = pTelServicioCliente;
-        this.telreservaciones = pTelReservaciones;
-        this.correoserviciocliente = pCorreoServicioCliente;
-        this.correoreservaciones = pCorreoReservaciones;
-        this.foto = pFoto;
-        this.rating = [];
+    constructor(pid,pnombre, platitud, plongitud, pprovincia, pcanton, pdistrito, pdireccionexacta, ptelserviciocliente, ptelreservaciones,pcorreoserviciocliente, pcorreoreservaciones, pfoto, prating){
+        this._id = pid;
+        this.nombre = pnombre;
+        this.latitud = platitud;
+        this.longitud = plongitud;
+        this.provincia = pprovincia;
+        this.canton = pcanton;
+        this.distrito = pdistrito;
+        this.direccionexacta = pdireccionexacta;
+        this.telserviciocliente = ptelserviciocliente;
+        this.telreservaciones = ptelreservaciones;
+        this.correoserviciocliente = pcorreoserviciocliente;
+        this.correoreservaciones = pcorreoreservaciones;
+        this.foto = pfoto;
+        this.rating = prating || [];
         
     }
-    
-    setId(pId) {
-        this._id = pId;
-      }
 
 }
