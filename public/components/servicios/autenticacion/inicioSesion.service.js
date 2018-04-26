@@ -26,7 +26,7 @@
         if(listaUsuarios[i].correo == pCredenciales.correo && listaUsuarios[i].contrasenna == pCredenciales.contrasenna){
           servicioSesion.crear(
             {
-              nombre: listaUsuarios[i].primerNombre,
+              nombre: listaUsuarios[i].primernombre,
               correo: listaUsuarios[i].correo,
               contrasenna: listaUsuarios[i].contrasenna,
               rol: listaUsuarios[i].rol

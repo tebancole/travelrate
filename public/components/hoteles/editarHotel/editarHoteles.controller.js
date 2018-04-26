@@ -116,7 +116,7 @@
         // }
 
         listaHoteles.forEach(objHotel => {
-          if (objHotel.id == vm.objNuevoHotel.id) {
+          if (objHotel.id == vm.modificarHotel.id) {
             objHotel.id = pHotel.id;
             objHotel.nombre = pHotel.nombre;
             objHotel.latitud = pHotel.latitud;
@@ -144,4 +144,4 @@
     }
 
 }
-})();d
+})();

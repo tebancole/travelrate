@@ -165,6 +165,7 @@ background: #dc4a00;
     padding-top: 15px;
 }
 
+
 .texts h3 {
     color: black;
 }
@@ -442,10 +443,12 @@ background: #dc4a00;
       font-weight: 700;
       letter-spacing: 1px;
       padding: 4px 36px;
-      margin: 5px auto;
+      margin: 10px auto;
       -webkit-transition: all 0.4s ease-in-out;
       transition: all 0.4s ease-in-out;
       cursor: pointer;
+      display: block;
+      
     }
 
     p{
@@ -545,3 +548,38 @@ background: #dc4a00;
   }
 }
 
+
+.table thead th {
+    background:rgba(133,255,52,.5);
+    color:black
+}
+
+.table {
+    overflow: scroll;
+} 
+
+.search {
+    width: 250px;
+    padding: 5px 0;
+    margin: 10px 0;
+    text-align: left;
+    border: none;
+}
+
+#listausuarios {
+    input {
+        border: none;
+        outline: 0;
+        border-bottom: 2px solid #dc4a00;
+    }
+
+    .btn {
+        color: #fff;
+        background: #dc4a00;
+        bottom: 80px;
+    }
+}
+
+#editar h1,h2,h3{
+    color: black;
+}

@@ -1,0 +1,44 @@
+<div ng-include="'./components/includes/_header.html'"></div>
+
+<section id="listausuarios">
+
+    <div class="container wrapperregistrohotel">
+            <input type="text" class="search" ng-model="BuscarUsuario " placeholder="Ingrese su búsqueda ">
+
+        <table class="table table-striped" >
+            <div class="col-md-6">
+
+            
+            <thead>
+                <tr>
+                    <th>Cedula</th>
+                    <th>Nombre Completo</th>
+                    <th class="d-none d-lg-table-cell">Correo</th>
+                    <th class="d-none d-lg-table-cell">Teléfono</th>
+                    <th class="d-none d-lg-table-cell">Fecha de Nacimiento</th>
+                    <th >Editar</th>
+                </tr>
+            </thead>
+        </div>
+        <div class="col-md-6">
+            <tbody class="" ng-repeat="usuario in vm.listaUsuarios | filter:BuscarUsuario">
+                <tr>
+                    <td>{{usuario.cedula}}</td>
+                    <td>{{usuario.nombre}} {{usuario.segundonombre}} {{usuario.primerapellido}} {{usuario.segundoapellido}}</td>
+                    <td class="d-none d-lg-table-cell">{{usuario.correo}}</td>
+                    <td class="d-none d-lg-table-cell">{{usuario.telefono}}</td>
+                    <td class="d-none d-lg-table-cell">{{usuario.fechanacimiento}}</td>
+                    <td>
+                        <button class="btn" ng-click="vm.modificar(usuario)">
+                            <i class="far fa-address-book"></i>Editar</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </div>
+        </table>
+    </div>
+
+
+
+</section>

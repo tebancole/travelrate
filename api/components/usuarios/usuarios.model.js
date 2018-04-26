@@ -4,13 +4,13 @@ const mongoose = require('mongoose');
 //Esquema de usuarios
 var UserSchema = new mongoose.Schema({
   cedula : {type : String, required : true},
-  primerNombre : {type : String, required : true},
-  segundoNombre : {type : String},
-  primerApellido : {type : String, required : true},
-  segundoApellido : {type : String},
+  primernombre : {type : String, required : true},
+  segundonombre : {type : String},
+  primerapellido : {type : String, required : true},
+  segundoapellido : {type : String},
   correo : {type : String, required : true, unique: true},
   telefono : {type : String, required : true},
-  fechaNacimiento : {type : Date, required : true},
+  fechanacimiento : {type : Date, required : true},
   contrasenna : {type : String, required : true},
   rol : {type : String, required : true}
 });

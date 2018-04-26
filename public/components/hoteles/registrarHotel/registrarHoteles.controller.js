@@ -136,15 +136,14 @@
             };
         
 
-    function getRandom() {
-      let randomID = (
-        document.getElementById('fieldid').value = Math.floor(Math.random() * 100000));
-      let randomToString = randomID.toString(36).substring(7);
-        
-      return randomToString;
-      console.log('randomID', randomToString);
-    }
-
+            function getRandom() {
+              let randomID = (
+                document.getElementById('fieldid').value = Math.floor(Math.random() * 100000));
+              let randomToString = randomID.toString();
+                
+              return randomToString;
+              console.log('randomID', randomToString);
+            }
 
     }
 })();

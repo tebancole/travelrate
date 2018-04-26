@@ -3,13 +3,13 @@ const UserModel = require('./usuarios.model');
 module.exports.registrar = (req, res) => {
   var newUser = new UserModel({
     cedula              :  req.body.cedula,
-    primerNombre        :  req.body.primerNombre,
-    segundoNombre       :  req.body.segundoNombre,
-    primerApellido      :  req.body.primerApellido,
-    segundoApellido     :  req.body.segundoApellido,
+    primernombre        :  req.body.primernombre,
+    segundonombre       :  req.body.segundonombre,
+    primerapellido      :  req.body.primerapellido,
+    segundoapellido     :  req.body.segundoapellido,
     correo              :  req.body.correo,
     telefono            :  req.body.telefono,
-    fechaNacimiento     :  req.body.fechaNacimiento,
+    fechanacimiento     :  req.body.fechanacimiento,
     contrasenna         :  req.body.contrasenna,
     rol                 :  req.body.rol
   });
@@ -30,7 +30,7 @@ module.exports.listarTodos = (req,res) => {
 };
 
 module.exports.actualizar = (req,res) => {
-  UserModel.update({correo: req.body.correo}, req.body, (err, user) => {
+  UserModel.update({cedula: req.body.cedula}, req.body, (err, user) => {
     if (err){
       res.json({success:false,msg:'No se ha actualizado.' + handleError(err)});
 

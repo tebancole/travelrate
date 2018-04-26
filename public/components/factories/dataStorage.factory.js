@@ -14,7 +14,8 @@
       getSession: _getSession,
       getHotelData: _getHotelData,
       setHotelData: _setHotelData,
-      updateHotelData: _updateHotelData
+      updateHotelData: _updateHotelData,
+      sendMail: _sendMail
     };
     return localAPI;
 
@@ -54,13 +55,13 @@
         async: false,
         data: {
           cedula: data.cedula,
-          primerNombre: data.primerNombre,
-          segundoNombre: data.segundoNombre,
-          primerApellido: data.primerApellido,
-          segundoApellido: data.segundoApellido,
+          primernombre: data.primernombre,
+          segundonombre: data.segundonombre,
+          primerapellido: data.primerapellido,
+          segundoapellido: data.segundoapellido,
           correo: data.correo,
           telefono: data.telefono,
-          fechaNacimiento: data.fechaNacimiento,
+          fechanacimiento: data.fechanacimiento,
           contrasenna: data.contrasenna,
           rol: data.rol,
         },
@@ -89,13 +90,13 @@
         async: false,
         data: {
           'cedula': data.cedula,
-          'primerNombre': data.primerNombre,
-          'segundoNombre': data.segundoNombre,
-          'primerApellido': data.primerApellido,
-          'segundoApellido': data.segundoApellido,
+          'primernombre': data.primernombre,
+          'segundonombre': data.segundonombre,
+          'primerapellido': data.primerapellido,
+          'segundoapellido': data.segundoapellido,
           'correo': data.correo,
           'telefono': data.telefono,
-          'fechaNacimiento': data.fechaNacimiento,
+          'fechanacimiento': data.fechanacimiento,
           'contrasenna': data.contrasenna,
           'rol':data.rol,
         }
@@ -225,6 +226,33 @@
       });
       peticion.fail (error => {
         response = error;
+      });
+
+      return response;
+    }
+
+    function _sendMail (data) {
+      let response;
+
+      let peticion = $.ajax ({
+        url: 'http://localhost:4000/api/mail',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: {
+          correo: data.correo,
+          contrasenna: data.contrasenna,
+        },
+      });
+
+      peticion.done (datos => {
+        response = datos.success;
+        console.log ('Petición realizada con éxito');
+      });
+      peticion.fail (error => {
+        response = error;
+        console.log ('Ocurrió un error');
       });
 
       return response;

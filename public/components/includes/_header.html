@@ -11,8 +11,9 @@
     </button>
     <div class="justify-content-center">
       <a ui-sref="registrarHotel" ng-show='vm.rol == 2'>Registrar Hotel</a>
+      <a ui-sref="listarUsuario" ng-show='vm.rol == 2'>Listar Usuarios</a>
       <a ui-sref="listarHoteles" ng-show='vm.rol == 2 || 1'>Lista de Hoteles</a>
-      <a ng-show='vm.rol == 2'>Registar un Cliente</a>
+      <a ui-sref="registrarClienteAdmin" ng-show='vm.rol == 2'>Registar un Cliente</a>
       <a ng-show='vm.rol == 1'>Sobre la Compañía</a>
     </div>
     <button class="float-right btn d-none d-lg-block" ui-sref="logIn" ng-click="vm.cerrarSesion()">Cerrar Session

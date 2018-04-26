@@ -155,12 +155,63 @@
         controllerAs: 'vm'
       })
       
+      .state('modificarUsuario', {
+        url: '/modificarUsuario',
+        templateUrl: './components/cliente/modificar/clientemodificar.view.html',
+        data:{
+          pageTitle: 'Modificar Usuario'
+        },
+        params: {
+          objUsuarioTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/cliente/modificar/clientemodificar.controller.js')
+          }]
+        },
+        controller: 'controladorModificarUsuario',
+        controllerAs: 'vm'
+      })
       
-      
-      
-    
+      .state('listarUsuario', {
+        url: '/listarUsuario',
+        templateUrl: './components/cliente/listar/clientelistar.view.html',
+        data:{
+          pageTitle: 'Lista de Usuarios'
+        },
+        params: {
+          objUsuarioTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/cliente/listar/clientelistar.controller.js')
+          }]
+        },
+        controller: 'controladorListarUsuario',
+        controllerAs: 'vm'
+      })
+
+      .state('registrarClienteAdmin', {
+        url: '/registrarClienteAdmin',
+        templateUrl: './components/cliente/registro/admin.registro.view.html',
+        data:{
+          pageTitle: 'Registro cliente'
+        },
+        params: {
+          objClienteTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/cliente/registro/admin.registro.contoller.js')
+          }]
+        },
+        controller: 'controladorRegistrarClienteAdmin',
+        controllerAs: 'vm'
+      })
 
     $urlRouterProvider.otherwise('/');
   };
+
+  
 
 })();

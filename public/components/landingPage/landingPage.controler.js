@@ -16,7 +16,6 @@
         { src: '../../sources/images/slide2.jpg'},
         { src: '../../sources/images/slide3.jpg'},
         { src: '../../sources/images/slide4.jpg'}
-        /* Slideshow not working? Check your image links. */
       ];
 
       $("#bodybg").vegas({
@@ -31,8 +30,6 @@
     });
 
 
-    /* Back top
-   -----------------------------------------------*/
     $(window).scroll(function () {
       if ($(this).scrollTop() > 200) {
         $('.go-top').fadeIn(200);
@@ -41,8 +38,6 @@
       }
     });
 
-    /* wow
-    -------------------------------*/
     new WOW({ mobile: false }).init();
 
   }

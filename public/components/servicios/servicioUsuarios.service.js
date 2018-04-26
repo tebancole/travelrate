@@ -23,7 +23,6 @@
             getUsuarios: _getUsuarios,
             actualizarUsuario: _actualizarUsuario,
             getUsuarioActivo:_getUsuarioActivo,
-            addEstado:_addEstado,
             getRol: _getRol
             }
         return publicAPI
@@ -32,7 +31,7 @@
             let registroExitoso = false;
 
             registroExitoso = dataStorageFactory.setUserData(pNuevoUsuario);
-            // dataStorageFactory.sendMail(pNuevoUsuario);
+            dataStorageFactory.sendMail(pNuevoUsuario);
 
             return registroExitoso;
         }
@@ -42,7 +41,7 @@
             let listaUsuariosBD = dataStorageFactory.getUsersData();
             listaUsuariosBD.forEach(objUsuario => {
      
-                    let objUsuarioTemp = new Usuario(objUsuario.cedula, objUsuario.primerNombre, objUsuario.segundoNombre, objUsuario.primerApellido, objUsuario.segundoApellido, objUsuario.correo, objUsuario.telefono, objUsuario.fechaNacimiento, objUsuario.contrasenna, objUsuario.rol)
+                    let objUsuarioTemp = new Usuario(objUsuario.cedula, objUsuario.primernombre, objUsuario.segundonombre, objUsuario.primerapellido, objUsuario.segundoapellido, objUsuario.correo, objUsuario.telefono, objUsuario.fechanacimiento, objUsuario.contrasenna, objUsuario.rol)
                 
                     
                     listaUsuarios.push(objUsuarioTemp);
@@ -77,7 +76,7 @@
             let usuarioActivo = '';
             for (let i = 0; i < listaUsuarios.length; i++) {
                 if(sesion.correo == listaUsuarios[i].correo){
-                    usuarioActivo = listaUsuarios[i].primerNombre; 
+                    usuarioActivo = listaUsuarios[i].primernombre; 
                 }   
                 
             }
@@ -85,14 +84,6 @@
         }
         
             
-             function _addEstado(pEstado) {
-            let registroExitoso = false;
-
-            registroExitoso = dataStorageFactory.setEstadoData(pEstado);
-
-            return registroExitoso;
-        }
-
         };
 
 

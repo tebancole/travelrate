@@ -10,7 +10,8 @@
         <!-- {{latlng}} -->
         <h3 class="text-center">Ingrese los datos</h3>
         <form class="col-12 row text-center wrapperregistrohotel" ng-submit="vm.preEditarHotel(vm.modificarHotel)">
-            <input type="text" class="form-control" id="cardNumber" ng-model="vm.modificarHotel.id" hidden>
+            
+            <input type="text" class="form-control" id="field1" ng-model="vm.modificarHotel.id" hidden>
 
             <ng-map id="mapedit" class="map-responsive" center="{{vm.center}}" style='width: 100%; margin: 15px;' zoom="8">
                 <marker position="{{vm.center}}" draggable="true" on-dragend="vm.getCurrentLocation($event)" coords="marker.coords" options="marker.options"

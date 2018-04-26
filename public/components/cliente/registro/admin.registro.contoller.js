@@ -2,12 +2,15 @@
     'use strict'
     angular
       .module('travelrate')
-      .controller('controladorRegistrarClientes', controladorRegistrarClientes);
+      .controller('controladorRegistrarClienteAdmin', controladorRegistrarClienteAdmins);
   
-    controladorRegistrarClientes.$inject = ['$state', '$stateParams', '$location', 'servicioUsuarios'];
+    controladorRegistrarClienteAdmins.$inject = ['$state', '$stateParams', '$location', 'servicioUsuarios'];
   
-    function controladorRegistrarClientes($state, $stateParams, $location, servicioUsuarios) {
-      let vm = this;
+    function controladorRegistrarClienteAdmins($state, $stateParams, $location, servicioUsuarios) {
+        let vm = this;
+        
+      vm.rol = servicioUsuarios.getRol();  
+      
   
       //da error y no llena los data list cuando no hay un rol seleccionado
       // vm.rol = servicioUsuarios.getRol();
@@ -36,7 +39,7 @@
             swal("Registro exitoso", "El cliente ha sido registrado correctamente", "success", {
               button: "Aceptar",
             });
-            $location.path('/logIn');
+            $location.path('/listarUsuario');
           }
 
   
