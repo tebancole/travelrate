@@ -139,7 +139,7 @@
 
       .state('evaularHotel', {
         url: '/evaularHotel',
-        templateUrl: './components/hoteles/evaularHotel/evaularHotel.view.html',
+        templateUrl: './components/hoteles/evaularHotel/evaluarHotel.view.html',
         data:{
           pageTitle: 'Evaular Hotel'
         },

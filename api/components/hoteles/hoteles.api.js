@@ -15,7 +15,7 @@ module.exports.registrar = (req, res) => {
     correoserviciocliente: req.body.correoserviciocliente,
     correoreservaciones: req.body.correoreservaciones,
     foto: req.body.foto,
-    rating: req.body.rating
+    rating: req.body.rating,
   });
 
   nuevoHotel.save((err) => {

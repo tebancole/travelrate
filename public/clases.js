@@ -15,7 +15,7 @@ class Usuario {
 }
 
 class Hotel {
-    constructor(pid,pnombre, platitud, plongitud, pprovincia, pcanton, pdistrito, pdireccionexacta, ptelserviciocliente, ptelreservaciones,pcorreoserviciocliente, pcorreoreservaciones, pfoto, prating){
+    constructor(pid,pnombre, platitud, plongitud, pprovincia, pcanton, pdistrito, pdireccionexacta, ptelserviciocliente, ptelreservaciones,pcorreoserviciocliente, pcorreoreservaciones, pfoto){
         this.id = pid;
         this.nombre = pnombre;
         this.latitud = platitud;
@@ -29,8 +29,11 @@ class Hotel {
         this.correoserviciocliente = pcorreoserviciocliente;
         this.correoreservaciones = pcorreoreservaciones;
         this.foto = pfoto;
-        this.rating = prating || [];
-        
+        this.rating = [];
+    }
+
+    agregarRating(rate) {
+        this.rating.push(rate);
     }
 
 }

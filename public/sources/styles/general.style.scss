@@ -583,3 +583,26 @@ background: #dc4a00;
 #editar h1,h2,h3{
     color: black;
 }
+
+.my-custom-stars .button .font-awesome-icons {
+    font-size: 50px; 
+  }
+  
+  .my-custom-stars .star-button.star-on .font-awesome-icons {
+    color: #003399; 
+  }
+  
+  .my-custom-stars .star-button.star-off .font-awesome-icons {
+    color: #99ccff; 
+  }
+
+#listaHoteles {
+     
+    .scale {
+
+    }
+
+    .scale:hover {
+        color: #dc4a00;
+    }
+}

@@ -26,7 +26,8 @@
                     <h4 class="float-left">{{hotel.nombre}}</h4>
                     </div>
                     <i class="far fa-edit float-right" ng-click="vm.modificarHotel(hotel)" ng-show='vm.rol == 2'></i>
-                    <i class="far fa-star" ui-sref="evaularHotel" ng-show='vm.rol == 1'></i>
+                    <i class="fas fa-star float-right scale" ng-click="vm.evaluarHotel(hotel)" 
+                    ng-show='vm.rol == 1'><small>Evaular</small></i>
                     <small class="float-left">{{hotel.direccionexacta}}</small>
                     <button type="button" class="btn" data-toggle="collapse" data-target="#{{hotel.nombre}}">Detalles</button>
                     <div id="{{hotel.nombre}}" class="collapse">
@@ -45,7 +46,7 @@
                     </div>
                   </div>
             <div class="inside">
-              <div class="icon"><i class="material-icons">Mapa</i></div>
+              <div class="icon"><i class="fas fa-map-marker-alt fa-2x"></i></div>
               <div class="contents">
                 <table>
                   <tr>

@@ -27,6 +27,8 @@
    
       vm.registrarUsuario = (pNuevoUsuario) => {
         let objNuevoCliente = new Usuario(pNuevoUsuario.cedula, pNuevoUsuario.primernombre, pNuevoUsuario.segundonombre, pNuevoUsuario.primerapellido, pNuevoUsuario.segundoapellido, pNuevoUsuario.correo, pNuevoUsuario.telefono, pNuevoUsuario.fechanacimiento,pNuevoUsuario.contrasenna, '1')
+        
+        
   
         let registro = servicioUsuarios.addUsuario(objNuevoCliente);
   
@@ -48,25 +50,8 @@
         }
       }
   
-      function calcularEdad () {
-        let dtToday = new Date();
-        let month = dtToday.getMonth() + 1;
-        let day = dtToday.getDate();
-        let year = dtToday.getFullYear();
-        let maxYear = year - 18;
-        if(month < 10)
-            month = '0' + month.toString();
-        if(day < 10)
-            day = '0' + day.toString();
 
-        let maxDate = maxYear + '-' + month + '-' + day;
-        let minYear = year - 80;
-        let minDate = minYear + '-' + month + '-' + day;
-        alert(maxDate);
-        document.querySelectorAll("#fechaNacimiento")[0].setAttribute("max",maxDate);
-
-        document.querySelectorAll("#fechaNacimiento")[0].setAttribute("min",minDate);
-    }
+    
 
     }
   })();

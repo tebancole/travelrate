@@ -1,0 +1,26 @@
+<div ng-include="'./components/includes/_header.html'"></div>
+<section>
+    <div class="container">
+
+
+
+        <h3>Cocina</h3>
+        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingCocina(rating)">
+        </jk-rating-stars>
+        <h3>Calidad de Servicio</h3>
+        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingCalidadServicio(rating)">
+        </jk-rating-stars>
+        <h3>Habitaciones</h3>
+        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingHabitaciones(rating)">
+        </jk-rating-stars>
+        <h3>Infrastructura</h3>
+        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingInfrastructura(rating)">
+        </jk-rating-stars>
+        <h3>Limpieza</h3>
+        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingLimpieza(rating)">
+        </jk-rating-stars>
+
+        <button ng-click="vm.agregarRate()">Calcule la madre</button>
+
+    </div>
+</section>

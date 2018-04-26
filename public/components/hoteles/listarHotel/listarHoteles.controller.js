@@ -19,6 +19,11 @@
 
       };
 
+      vm.evaluarHotel = (pObjHotel) =>{
+        $state.go('evaularHotel', { objHotelTemp: JSON.stringify(pObjHotel) });
+
+      };
+
 
       $('.remove').click(function(){
         $('.bottom').removeClass("clicked");

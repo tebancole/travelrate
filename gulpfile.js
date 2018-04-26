@@ -95,6 +95,13 @@ gulp.task('dependencies', () => {
       './node_modules/ngmap/build/scripts/ng-map.min.js'
     ])
       .pipe(gulp.dest('./public/lib/ng-map'));
+
+      
+    gulp.src([
+      './node_modules/angular-jk-rating-stars/dist/jk-rating-stars.min.css',
+      './node_modules/angular-jk-rating-stars/dist/jk-rating-stars.min.js'
+    ])
+      .pipe(gulp.dest('./public/lib/rating'));
       
 });
 

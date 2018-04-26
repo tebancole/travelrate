@@ -113,7 +113,7 @@
               pNuevoHotel.latitud = vm.current[0];
               pNuevoHotel.longitud = vm.current[1]
 
-            let objNuevoHotel = new Hotel (pNuevoHotel.id, pNuevoHotel.nombre, pNuevoHotel.latitud, pNuevoHotel.longitud, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionexacta, pNuevoHotel.telserviciocliente, pNuevoHotel.telreservaciones, pNuevoHotel.correoserviciocliente, pNuevoHotel.correoreservaciones, imgUrl) 
+            let objNuevoHotel = new Hotel (pNuevoHotel.id, pNuevoHotel.nombre, pNuevoHotel.latitud, pNuevoHotel.longitud, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionexacta, pNuevoHotel.telserviciocliente, pNuevoHotel.telreservaciones, pNuevoHotel.correoserviciocliente, pNuevoHotel.correoreservaciones, imgUrl);
 
        
     
