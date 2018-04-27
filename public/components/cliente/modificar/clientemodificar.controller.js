@@ -25,6 +25,18 @@
       vm.modificarUsuario.segundoapellido = objNuevoUsuario.segundoapellido;
       vm.modificarUsuario.correo = objNuevoUsuario.correo;
       vm.modificarUsuario.telefono = objNuevoUsuario.telefono;
+
+      vm.cambiarEstado = (estado) => {
+        let listaUsuarios = servicioUsuarios.getUsuarios();
+
+        listaUsuarios.forEach(objUsuario => {
+          if (objUsuario.cedula == objNuevoUsuario.cedula){
+            objUsuario.cambiarEstado(estado);
+          }
+          servicioUsuarios.actualizarUsuario(objUsuario);
+        });
+        $state.go('listarUsuario');
+      };
         
       vm.editarUsuario = (pUsuario) => {
           let listaUsuarios = servicioUsuarios.getUsuarios();

@@ -105,19 +105,25 @@
               
             }
 
-            
+            // vm.calcularEdad = (birthDate) => { // birthDate is a date
+            //   var ageDifMs = Date.now() - birthDate.getTime();
+            //   var ageDate = new Date(ageDifMs); // miliseconds from epoch
+            //   console.log(Math.abs(ageDate.getUTCFullYear() - 1970));
+            //   return Math.abs(ageDate.getUTCFullYear() - 1970);
+            // }
 
             vm.registrarHotel = (pNuevoHotel, imgUrl) => {
               pNuevoHotel.id = idRandom;
               pNuevoHotel.foto = imgUrl;
               pNuevoHotel.latitud = vm.current[0];
-              pNuevoHotel.longitud = vm.current[1]
+              pNuevoHotel.longitud = vm.current[1];
+              
+              
 
             let objNuevoHotel = new Hotel (pNuevoHotel.id, pNuevoHotel.nombre, pNuevoHotel.latitud, pNuevoHotel.longitud, pNuevoHotel.provincia, pNuevoHotel.canton, pNuevoHotel.distrito, pNuevoHotel.direccionexacta, pNuevoHotel.telserviciocliente, pNuevoHotel.telreservaciones, pNuevoHotel.correoserviciocliente, pNuevoHotel.correoreservaciones, imgUrl);
 
-       
     
-            let registro = servicioHoteles.addHotel(pNuevoHotel);
+            let registro = servicioHoteles.addHotel(objNuevoHotel);
 
                 if (registro) {
                 swal("Registro exitoso", "Hotel registrado con exito", "success", {

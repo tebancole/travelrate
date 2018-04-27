@@ -40,10 +40,13 @@
             let listaUsuarios = [];
             let listaUsuariosBD = dataStorageFactory.getUsersData();
             listaUsuariosBD.forEach(objUsuario => {
+
+                    let date = new Date(objUsuario.fechanacimiento);
+                    objUsuario.fechanacimiento = date;
      
-                    let objUsuarioTemp = new Usuario(objUsuario.cedula, objUsuario.primernombre, objUsuario.segundonombre, objUsuario.primerapellido, objUsuario.segundoapellido, objUsuario.correo, objUsuario.telefono, objUsuario.fechanacimiento, objUsuario.contrasenna, objUsuario.rol)
-                
-                    
+                    let objUsuarioTemp = new Usuario(objUsuario.cedula, objUsuario.primernombre, objUsuario.segundonombre, objUsuario.primerapellido, objUsuario.segundoapellido, objUsuario.correo, objUsuario.telefono, objUsuario.fechanacimiento, objUsuario.contrasenna, objUsuario.rol, objUsuario.estado)
+             
+
                     listaUsuarios.push(objUsuarioTemp);
                 });
 

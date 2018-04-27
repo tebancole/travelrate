@@ -50,20 +50,29 @@
                     <div class="col-md-3">
                         <label for="telefono">Número de teléfono </label>
                         <input type="tel" class="form-control" ng-model="vm.nuevoUsuario.telefono" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                            oninput="setCustomValidity('')" id="telefono">
+                            oninput="setCustomValidity('')" id="telefono" maxlength="11">
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-3">
 
-                        <label for="contrasenna">Crear contraseña</label>
+                        <label for="contrasenna">Crear contraseña <strong>*</strong></label>
                         <input type="password" class="form-control" ng-model="vm.nuevoUsuario.contrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                            oninput="setCustomValidity('')" id="contrasenna">
+                            oninput="setCustomValidity('')" id="contrasenna" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+              
                     </div>
+                    <div class="col-md-3">
+
+                            <label for="contrasenna">Confirme su contraseña</label>
+                            <input type="password" class="form-control" ng-model="vm.confirmarContrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                                oninput="setCustomValidity('')" id="contrasenna" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        </div>
                     <div class="col-md-6">
+                      
                         <button type="submit" class="btn">Finalizar Registro</button>
                     </div>
 
                     <div class="col-md-12">
+                            <small><strong>*</strong>La contraseña debe contener al menos un número y una letra mayúscula y minúscula, y al menos 8 o más caracteres</small>
                         <p class="message">¿Ya posee una cuenta?
                             <a ui-sref="logIn">
                                 <strong>Ingresar</strong>

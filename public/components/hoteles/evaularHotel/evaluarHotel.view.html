@@ -1,26 +1,35 @@
 <div ng-include="'./components/includes/_header.html'"></div>
-<section>
+<section id="evaluar">
     <div class="container">
+        <div class="wrapperregistrohotel">
+            <div class="container justify-content-center"
+            h3></div>Para TravelRate es muy importante su evaluación de servicio, por favor llene el formulario</h3>
 
+            <hr/>
 
+            <h3>Califique la alimentación en el Hotel </h3>
+            <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingCocina(rating)">
+            </jk-rating-stars>
 
-        <h3>Cocina</h3>
-        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingCocina(rating)">
-        </jk-rating-stars>
-        <h3>Calidad de Servicio</h3>
-        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingCalidadServicio(rating)">
-        </jk-rating-stars>
-        <h3>Habitaciones</h3>
-        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingHabitaciones(rating)">
-        </jk-rating-stars>
-        <h3>Infrastructura</h3>
-        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingInfrastructura(rating)">
-        </jk-rating-stars>
-        <h3>Limpieza</h3>
-        <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingLimpieza(rating)">
-        </jk-rating-stars>
+            <h3>Califique la atención recibida por el personal del Hotel</h3>
+            <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingCalidadServicio(rating)">
+            </jk-rating-stars>
 
-        <button ng-click="vm.agregarRate()">Calcule la madre</button>
+            <h3>Califique la calidad y orden en las habitaciones.</h3>
+            <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingHabitaciones(rating)">
+            </jk-rating-stars>
 
+            <h3>Califique la infraestructura del Hotel.</h3>
+            <jk-rating-stars max-rating="5" rating="3" on-rating="vm.onItemRatingInfrastructura(rating)">
+            </jk-rating-stars>
+
+            <h3>Califique la limpieza del Hotel.</h3>
+            <jk-rating-stars max-rating="5" rating="5" on-rating="vm.onItemRatingLimpieza(rating)">
+            </jk-rating-stars>
+
+            <button ng-click="vm.agregarRate()" class="btn">Evaluar</button>
+
+        </div>
+        </div>
     </div>
 </section>

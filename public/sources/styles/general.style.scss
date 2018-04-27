@@ -488,6 +488,30 @@ background: #dc4a00;
   border-color: transparent;
 }
 
+#editar .btnEdit {
+ float: center;
+    background: transparent;
+    border: 3px solid black;
+    border-radius: 0px;
+    color: white;
+    background:  #dc4a00;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 150px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    margin: 10px auto;
+    padding: 5px;
+    
+}
+
+#editar .btnEdit:hover {
+  background: white;
+  color: #dc4a00;
+  border-color: transparent;
+}
+
 .wrapperregistro{
     background:rgba(0,0,0,0.2);
     border: 1 solid #dc4a00;;
@@ -578,6 +602,12 @@ background: #dc4a00;
         background: #dc4a00;
         bottom: 80px;
     }
+
+    .btn:hover {
+        color: #dc4a00;
+        background: #fff;
+        bottom: 80px;
+    }
 }
 
 #editar h1,h2,h3{
@@ -606,3 +636,110 @@ background: #dc4a00;
         color: #dc4a00;
     }
 }
+
+hr {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    color: #dc4a00;
+   
+}
+
+#listaHoteles {
+    h5 {
+        font-size: 16px;
+        
+    }
+}
+
+.my-custom-stars .button .material-icons {
+    font-size: 15px; 
+   
+  }
+  
+  .my-custom-stars .star-button.star-on .material-icons {
+    color: #dc4a00;
+
+  
+  }
+  
+  .my-custom-stars .star-button.star-off .material-icons {
+    color: white;
+
+  }
+
+
+  .leftwrap {
+      margin: 20px;
+  }
+
+  
+  #evaluar {
+    .btn {
+        color: #fff;
+        background: #dc4a00;
+        bottom: 20px;
+        width: 200px;
+    }
+
+    .btn:hover {
+        color: #dc4a00;
+        background: #fff;
+        border: 2px solid #dc4a00;
+        bottom: 20px;
+    }
+  }
+
+  .controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+  }
+
+  #pac-input:focus {
+    border-color: #4d90fe;
+  }
+
+  .pac-container {
+    font-family: Roboto;
+  }
+
+  #type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+  }
+
+  #type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  #target {
+    width: 345px;
+  }
+
+  #bg {
+      background: url('../../sources/images/fondo1.png');
+      width: 100%;
+      height: 600px;
+      background-repeat: no-repeat;
+ 
+      margin: 0 auto;
+  }

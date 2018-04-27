@@ -39,12 +39,11 @@
             let listaHotelesBD = dataStorageFactory.getHotelData();
             listaHotelesBD.forEach(objHotel => {
      
-                    let objHotelTemp = new Hotel(objHotel.id,objHotel.nombre, objHotel.latitud, objHotel.longitud, objHotel.provincia, objHotel.canton, objHotel.distrito, objHotel.direccionexacta, objHotel.telserviciocliente, objHotel.telreservaciones, objHotel.correoreservaciones, objHotel.correoreservaciones,objHotel.foto, objHotel.rating);
+                    let objHotelTemp = new Hotel(objHotel.id,objHotel.nombre, objHotel.latitud, objHotel.longitud, objHotel.provincia, objHotel.canton, objHotel.distrito, objHotel.direccionexacta, objHotel.telserviciocliente, objHotel.telreservaciones, objHotel.correoreservaciones, objHotel.correoreservaciones,objHotel.foto,objHotel.estado, objHotel.rating);
 
-                    objHotel.rating.forEach(objRating => {
-                        objHotelTemp.agregarRating(objRating);
-                    })
-                    // objHotelTemp.setId(objHotel._id);
+                    objHotelTemp.ratingsuma = Number(objHotel.ratingsuma);
+                
+
                     listaHoteles.push(objHotelTemp);
                 });
 

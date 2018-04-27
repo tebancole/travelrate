@@ -12,7 +12,8 @@ var UserSchema = new mongoose.Schema({
   telefono : {type : String, required : true},
   fechanacimiento : {type : Date, required : true},
   contrasenna : {type : String, required : true},
-  rol : {type : String, required : true}
+  rol : {type : String, required : true},
+  estado : {type : String, required : true},
 });
 
 //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose

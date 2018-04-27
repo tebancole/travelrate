@@ -1,8 +1,8 @@
 <div ng-include="'./components/includes/_header.html'"></div>
 
 <section id="listaHoteles">
-    
-    <!-- <div class="card-responsive" ng-repeat="hotel in vm.listaHoteles">
+
+  <!-- <div class="card-responsive" ng-repeat="hotel in vm.listaHoteles">
         <div>
             <h3>{{hotel.nombre}}</h3>
             <img src="{{hotel.foto}}" alt="" width="100px" height="100px">
@@ -15,48 +15,140 @@
         </div>
         
     </div> -->
-    <div class="container">
-    <div class="wrapper" ng-repeat="hotel in vm.listaHoteles">
-            <div class="container">
-              <img src="{{hotel.foto}}" class="top">
-              
-         
-                  <div class="details">
-                    <p><strong>Nombre</strong></p>
-                    <h4 class="float-left">{{hotel.nombre}}</h4>
-                    </div>
-                    <i class="far fa-edit float-right" ng-click="vm.modificarHotel(hotel)" ng-show='vm.rol == 2'></i>
-                    <i class="fas fa-star float-right scale" ng-click="vm.evaluarHotel(hotel)" 
-                    ng-show='vm.rol == 1'><small>Evaular</small></i>
-                    <small class="float-left">{{hotel.direccionexacta}}</small>
-                    <button type="button" class="btn" data-toggle="collapse" data-target="#{{hotel.nombre}}">Detalles</button>
-                    <div id="{{hotel.nombre}}" class="collapse">
-                     <p><strong>Servicio Cliente: </strong></p>
-                     <small>{{hotel.telserviciocliente}}</small>
-                     <small>{{hotel.correoserviciocliente}}</small>
-                     <p><strong>Reservaciones: </strong></p>
-                     <small>{{hotel.telreservaciones}}</small>
-                     <small>{{hotel.correoserviciocliente}}</small>
-                     <p><strong>Provincia</strong></p>
-                     <small>{{hotel.provincia}}</small>
-                     <p><strong>Canton</strong></p>
-                     <small>{{hotel.provincia}}</small>
-                     <p><strong>Distrito</strong></p>
-                     <small>{{hotel.provincia}}</small>
-                    </div>
-                  </div>
-            <div class="inside">
-              <div class="icon"><i class="fas fa-map-marker-alt fa-2x"></i></div>
-              <div class="contents">
-                <table>
-                  <tr>
-                      <ng-map id="map" center="{{hotel.latitud}}, {{hotel.longitud}}" styles="width: 50%; height: 50%;" zoom="8">
-                          <marker position="{{hotel.latitud}}, {{hotel.longitud}}"></marker>
-                        </ng-map>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
+  <div class="container wrapperregistrohotel">
+    <h3 class="text-center">Lista de Hoteles</h3>
+
+
+
+    <div class="wrapper" ng-repeat="hotel in vm.listaHoteles" ng-if="hotel.estado == 'activo'">
+
+      <div class="container">
+        <div layout="column">
+          <h5>Rate</h5>
+
+          <jk-rating-stars max-rating="5" rating="vm.calcularPromedio(hotel.rating)" read-only="vm.readOnly" class="my-custom-stars">
+          </jk-rating-stars>
+          
+          <img src="{{hotel.foto}}" class="top">
         </div>
+
+        <div class="details">
+          <p>
+            <strong>Nombre</strong>
+          </p>
+          <h4 class="float-left">{{hotel.nombre}}</h4>
+        </div>
+        <i class="far fa-edit float-right" ng-click="vm.modificarHotel(hotel)" ng-show='vm.rol == 2'></i>
+        <i class="fas fa-star float-right scale" ng-click="vm.evaluarHotel(hotel)" ng-show='vm.rol == 1'>
+          <small>Evaular</small>
+        </i>
+
+        <small class="float-left">{{hotel.direccionexacta}}</small>
+
+        <button type="button" class="btn" data-toggle="collapse" data-target="#{{hotel.nombre}}">Detalles</button>
+        <div id="{{hotel.nombre}}" class="collapse">
+          <p>
+            <strong>Servicio Cliente: </strong>
+          </p>
+          <small>{{hotel.telserviciocliente}}</small>
+          <small>{{hotel.correoserviciocliente}}</small>
+          <p>
+            <strong>Reservaciones: </strong>
+          </p>
+          <small>{{hotel.telreservaciones}}</small>
+          <small>{{hotel.correoserviciocliente}}</small>
+          <p>
+            <strong>Provincia</strong>
+          </p>
+          <small>{{hotel.provincia}}</small>
+          <p>
+            <strong>Canton</strong>
+          </p>
+          <small>{{hotel.provincia}}</small>
+          <p>
+            <strong>Distrito</strong>
+          </p>
+          <small>{{hotel.provincia}}</small>
+        </div>
+      </div>
+      <div class="inside">
+        <div class="icon">
+          <i class="fas fa-map-marker-alt fa-2x"></i>
+        </div>
+        <div class="contents">
+          <table>
+            <tr>
+              <ng-map id="map" center="{{hotel.latitud}}, {{hotel.longitud}}" styles="width: 50%; height: 50%;" zoom="8">
+                <marker position="{{hotel.latitud}}, {{hotel.longitud}}"></marker>
+              </ng-map>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <h3 class="text-center">Hoteles Desactivados</h3>
+
+    <div class="wrapper" ng-repeat="hotel in vm.listaHoteles" ng-if="hotel.estado == 'inactivo'">
+      <div class="container">
+        <img src="{{hotel.foto}}" class="top">
+
+
+        <div class="details">
+          <p>
+            <strong>Nombre</strong>
+          </p>
+          <h4 class="float-left">{{hotel.nombre}}</h4>
+        </div>
+        <i class="far fa-edit float-right" ng-click="vm.modificarHotel(hotel)" ng-show='vm.rol == 2'></i>
+        <i class="fas fa-star float-right scale" ng-click="vm.evaluarHotel(hotel)" ng-show='vm.rol == 1'>
+          <small>Evaular</small>
+        </i>
+        <small class="float-left">{{hotel.direccionexacta}}</small>
+        <button type="button" class="btn" data-toggle="collapse" data-target="#{{hotel.nombre}}">Detalles</button>
+        <div id="{{hotel.nombre}}" class="collapse">
+          <p>
+            <strong>Servicio Cliente: </strong>
+          </p>
+          <small>{{hotel.telserviciocliente}}</small>
+          <small>{{hotel.correoserviciocliente}}</small>
+          <p>
+            <strong>Reservaciones: </strong>
+          </p>
+          <small>{{hotel.telreservaciones}}</small>
+          <small>{{hotel.correoserviciocliente}}</small>
+          <p>
+            <strong>Provincia</strong>
+          </p>
+          <small>{{hotel.provincia}}</small>
+          <p>
+            <strong>Canton</strong>
+          </p>
+          <small>{{hotel.provincia}}</small>
+          <p>
+            <strong>Distrito</strong>
+          </p>
+          <small>{{hotel.provincia}}</small>
+        </div>
+      </div>
+      <div class="inside">
+        <div class="icon">
+          <i class="fas fa-map-marker-alt fa-2x"></i>
+        </div>
+        <div class="contents">
+          <table>
+            <tr>
+              <ng-map id="map" center="{{hotel.latitud}}, {{hotel.longitud}}" styles="width: 50%; height: 50%;" zoom="8">
+                <marker position="{{hotel.latitud}}, {{hotel.longitud}}"></marker>
+              </ng-map>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </section>

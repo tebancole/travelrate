@@ -16,6 +16,8 @@ module.exports.registrar = (req, res) => {
     correoreservaciones: req.body.correoreservaciones,
     foto: req.body.foto,
     rating: req.body.rating,
+    ratingsuma : req.body.ratingsuma,
+    estado : req.body.estado,
   });
 
   nuevoHotel.save((err) => {
@@ -34,7 +36,10 @@ module.exports.listarTodos = (req,res) => {
 };
 
 module.exports.actualizar = (req,res) => {
+
+  req.body.rating = JSON.parse(req.body.rating);
   HotelModel.update({id: req.body.id}, req.body, (err, user) => {
+    console.log(req.body);
     if (err){
       res.json({success:false,msg:'No se ha actualizado.' + handleError(err)});
 

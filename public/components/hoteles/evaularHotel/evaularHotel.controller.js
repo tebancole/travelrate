@@ -72,11 +72,12 @@
       let promedio = (vm.rate1 + vm.rate2 + vm.rate3 + vm.rate4 + vm.rate5) / 5;
       
       let listaHoteles = servicioHoteles.getHotel();
+
       for (let i = 0; i < listaHoteles.length; i++) {
         if (listaHoteles[i].id == objHotel.id) {
 
           listaHoteles[i].agregarRating(promedio);
-
+          console.log ('lista',listaHoteles[i]);
           servicioHoteles.actualizarHotel(listaHoteles[i]);
         }
       };

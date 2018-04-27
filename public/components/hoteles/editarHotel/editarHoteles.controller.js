@@ -10,9 +10,7 @@
       let vm = this;
 
       vm.rol = servicioUsuarios.getRol();
-
-     
-
+    
       vm.provincias = $http({
         method: 'GET',
         url: './sources/data/provincias.json'
@@ -75,7 +73,7 @@
       let objHotelAModificar = JSON.parse($stateParams.objHotelTemp);
       // vm.objNuevoHotel.setId(objHotelAModificar._id);
 
-      let objNuevoHotel = new Hotel(objHotelAModificar.id, objHotelAModificar.nombre, objHotelAModificar.latitud, objHotelAModificar.longitud, objHotelAModificar.provincia, objHotelAModificar.canton, objHotelAModificar.distrito,objHotelAModificar.direccionexacta, objHotelAModificar.telserviciocliente, objHotelAModificar.telreservaciones, objHotelAModificar.correoserviciocliente, objHotelAModificar.correoreservaciones, objHotelAModificar.foto);
+      let objNuevoHotel = new Hotel(objHotelAModificar.id, objHotelAModificar.nombre, objHotelAModificar.latitud, objHotelAModificar.longitud, objHotelAModificar.provincia, objHotelAModificar.canton, objHotelAModificar.distrito,objHotelAModificar.direccionexacta, objHotelAModificar.telserviciocliente, objHotelAModificar.telreservaciones, objHotelAModificar.correoserviciocliente, objHotelAModificar.correoreservaciones, objHotelAModificar.foto, objHotelAModificar.estado);
 
       vm.center = [objHotelAModificar.latitud, objHotelAModificar.longitud];
       
@@ -92,7 +90,19 @@
       vm.modificarHotel.correoserviciocliente = objNuevoHotel.correoserviciocliente;
       vm.modificarHotel.correoreservaciones = objNuevoHotel.correoreservaciones;
       vm.modificarHotel.foto = objNuevoHotel.foto;
+      vm.modificarHotel.estado = objNuevoHotel.estado;
 
+      vm.cambiarEstado = (estado) => {
+        let listaHoteles = servicioHoteles.getHotel();
+
+        listaHoteles.forEach(objHotel => {
+          if (objHotel.id == objNuevoHotel.id){
+            objHotel.cambiarEstado(estado);
+          }
+          servicioHoteles.actualizarHotel(objHotel);
+        });
+        $state.go('listarHoteles');
+      };
       
       vm.cloudObj = imageService.getConfiguration();
 
@@ -130,6 +140,7 @@
             objHotel.telreservaciones = pHotel.telreservaciones;
             objHotel.correoreservaciones = pHotel.correoreservaciones;
             objHotel.foto = pHotel.foto;
+            objHotel.estado = pHotel.estado;
 
             servicioHoteles.actualizarHotel(objHotel);
         

@@ -209,6 +209,27 @@
         controllerAs: 'vm'
       })
 
+      .state('sobreCompania', {
+        url: '/sobreCompania',
+        templateUrl: './components/cliente/compania/sobreCompañia.view.html',
+        data:{
+          pageTitle: 'Registro cliente'
+        },
+        params: {
+          objClienteTemp: ''
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/cliente/compania/sobreCompania.controller.js')
+          }]
+        },
+        controller: 'controladorSobreCompania',
+        controllerAs: 'vm'
+      })
+
+
+
+
     $urlRouterProvider.otherwise('/');
   };
 

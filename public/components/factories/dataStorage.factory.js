@@ -32,8 +32,7 @@
       });
 
       peticion.done (usuarios => {
-         ('Datos que vienen desde la base de datos');
-         (usuarios);
+      
         listaUsuarios = usuarios;
       });
       peticion.fail (() => {
@@ -64,6 +63,7 @@
           fechanacimiento: data.fechanacimiento,
           contrasenna: data.contrasenna,
           rol: data.rol,
+          estado : data.estado,
         },
       });
 
@@ -99,6 +99,7 @@
           'fechanacimiento': data.fechanacimiento,
           'contrasenna': data.contrasenna,
           'rol':data.rol,
+          'estado': data.estado,
         }
       });
 
@@ -180,6 +181,8 @@
           correoreservaciones : data.correoreservaciones,
           foto : data.foto,
           rating : data.rating,
+          ratingsuma : data.ratingsuma,
+          estado : data.estado,
           
         },
       });
@@ -196,7 +199,7 @@
 
     function _updateHotelData (data) {
       let response;
-
+      console.log(typeof(data.rating));
       let peticion = $.ajax ({
         url: 'http://localhost:4000/api/actualizar_hotel',
         type: 'put',
@@ -204,7 +207,7 @@
         dataType: 'json',
         async: false,
         data: {
-          id: data.id,
+          id : data.id,
           nombre : data.nombre,
           latitud : data.latitud,
           longitud : data.longitud,
@@ -217,12 +220,14 @@
           correoserviciocliente : data.correoserviciocliente,
           correoreservaciones : data.correoreservaciones,
           foto : data.foto,
-          rating : data.rating,
+          rating : JSON.stringify(data.rating),
+          ratingsuma : data.ratingsuma,
+          estado : data.estado,
         }
       });
 
       peticion.done((datos) => {
-        response = datos.success;
+        response = datos.msj;
       });
       peticion.fail (error => {
         response = error;

@@ -22,8 +22,12 @@
       vm.evaluarHotel = (pObjHotel) =>{
         $state.go('evaularHotel', { objHotelTemp: JSON.stringify(pObjHotel) });
 
+
       };
 
+      vm.calcularPromedio = (rating) => {
+        return rating.reduce((sum, x) => sum + x) / rating.length;
+      }
 
       $('.remove').click(function(){
         $('.bottom').removeClass("clicked");

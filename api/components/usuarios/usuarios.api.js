@@ -11,7 +11,8 @@ module.exports.registrar = (req, res) => {
     telefono            :  req.body.telefono,
     fechanacimiento     :  req.body.fechanacimiento,
     contrasenna         :  req.body.contrasenna,
-    rol                 :  req.body.rol
+    rol                 :  req.body.rol,
+    estado              :  req.body.estado,
   });
 
   newUser.save((err) => {
@@ -40,11 +41,11 @@ module.exports.actualizar = (req,res) => {
   });
 };
 
-module.exports.buscar_usuario_por_id = function(req, res){
-  UserModel.findById({_id : req.body.id}).then(
-      function(usuario){
-          res.send(usuario);
-      });
-};
+// module.exports.buscar_usuario_por_id = function(req, res){
+//   UserModel.findById({_id : req.body.id}).then(
+//       function(usuario){
+//           res.send(usuario);
+//       });
+// };
 
 
