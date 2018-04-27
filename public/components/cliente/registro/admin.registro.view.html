@@ -1,0 +1,75 @@
+<div ng-include="'./components/includes/_header.html'"></div>
+<section id="registro">
+    <div class="container">
+        <div class="row justify-content-center">
+                <h3 class="text-center">Registro Usuario</h3>
+            <div class="wrapperregistro">
+
+                <form class="col-12 row text-center" ng-submit="vm.registrarUsuario(vm.nuevoCliente)">
+
+                    <div class="col-md-3">
+                        <label for="primernombre">Primer Nombre</label>
+                        <input type="text" class="form-control" id="primernombre" ng-model="vm.nuevoCliente.primernombre" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                            oninput="setCustomValidity('')">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="segundonombre">Segundo Nombre</label>
+                        <input type="text" class="form-control" ng-model="vm.nuevoCliente.segundonombre" id="segundonombre">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="primerapellido">Primer Apellido</label>
+                        <input type="text" class="form-control" ng-model="vm.nuevoCliente.primerapellido" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                            oninput="setCustomValidity('')" id="primerapellido">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="segundoapellido">Segundo Apellido</label>
+                        <input type="text" class="form-control" ng-model="vm.nuevoCliente.segundoapellido" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                            oninput="setCustomValidity('')" id="segundoapellido">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="cedula">Cédula</label>
+                        <input type="text" class="form-control" ng-model="vm.nuevoCliente.cedula" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                            oninput="setCustomValidity('')" id="cedula">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label for="fechanacimiento">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" ng-model="vm.nuevoCliente.fechanacimiento" required oninvalid="this.setCustomValidity('Es necesario ser mayor de edad para continuar')"
+                            oninput="setCustomValidity('')" id="fechanacimiento">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" class="form-control" ng-model="vm.nuevoCliente.correo" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                            oninput="setCustomValidity('')" id="correo">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="telefono">Número de teléfono </label>
+                        <input type="tel" class="form-control" ng-model="vm.nuevoCliente.telefono" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                            oninput="setCustomValidity('')" id="telefono">
+                    </div>
+
+                    <div class="col-md-3">
+
+                            <label for="contrasenna">Crear contraseña <strong>*</strong></label>
+                        <input type="password" class="form-control" ng-model="vm.nuevoCliente.contrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                            oninput="setCustomValidity('')" id="contrasenna" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    </div>
+                    <div class="col-md-3">
+
+                            <label for="contrasenna">Confirmar contraseña</label>
+                            <input type="password" class="form-control" ng-model="vm.confirmarContrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                                oninput="setCustomValidity('')" id="contrasenna" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        </div>
+                    <div class="col-md-6">
+                            <small><strong>*</strong>La contraseña debe contener al menos un número y una letra mayúscula y minúscula, y al menos 8 o más caracteres</small>
+                        <button type="submit" class="btn">Finalizar Registro</button>
+                        
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+</section>

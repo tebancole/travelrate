@@ -5,13 +5,15 @@ module.exports.enviarCorreo = (req, res) =>{
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'echavarriac@ucenfotec.ac.cr', //CORREO_DEL_EQUIPO
-      pass: 'HiSSOn70+70'        //CONTRASEÑA_DEL_EQUIPO
+      user: 'byticos506@gmail.com', //CORREO_DEL_EQUIPO
+      pass: 'mordiscode'        //CONTRASEÑA_DEL_EQUIPO
     }
   });
 
+  //Se uso el correo byticos para no exponer una contraseña propia
+
   let mailOptios = {
-    from: 'echavarriac@ucenfotec.ac.cr',
+    from: 'byticos506@gmail.com',
     to: req.body.correo,
     subject: req.body.subject,
     text: req.body.contrasenna

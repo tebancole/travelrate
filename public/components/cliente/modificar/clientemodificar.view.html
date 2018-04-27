@@ -1,0 +1,59 @@
+<div ng-include="'./components/includes/_header.html'"></div>
+
+<section id="editar">
+        <div class="container">
+                <div class="text-center">
+                        <button class="btnEdit" ng-click="vm.cambiarEstado('activo')" ><i class="far fa-check-circle">Activar</i></button>
+                        <button class="btnEdit" ng-click="vm.cambiarEstado('inactivo')"><i class="far fa-times-circle">Desactivar</i></button>
+            <div class="row justify-content-center">
+                    <h3 class="text-center">Editar Usuario</h3>
+                <div class="wrapperregistro">
+                    
+                    <form class="col-12 row text-center" ng-submit="vm.editarUsuario(vm.modificarUsuario)">
+    
+                        <div class="col-md-3">
+                            <label for="primernombre">Primer Nombre</label>
+                            <input type="text" class="form-control" id="primernombre" ng-model="vm.modificarUsuario.primernombre" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                                oninput="setCustomValidity('')">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="segundonombre">Segundo Nombre</label>
+                            <input type="text" class="form-control" ng-model="vm.modificarUsuario.segundonombre" id="segundonombre">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="primerapellido">Primer Apellido</label>
+                            <input type="text" class="form-control" ng-model="vm.modificarUsuario.primerapellido" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                                oninput="setCustomValidity('')" id="primerapellido">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="segundoapellido">Segundo Apellido</label>
+                            <input type="text" class="form-control" ng-model="vm.modificarUsuario.segundoapellido" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                                oninput="setCustomValidity('')" id="segundoapellido">
+                        </div>
+    
+                        <div class="col-md-3">
+                            <label for="cedula">Cédula</label>
+                            <input type="text" class="form-control" ng-model="vm.modificarUsuario.cedula" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                                oninput="setCustomValidity('')" id="cedula" disabled>
+    
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fechanacimiento">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" ng-model="vm.modificarUsuario.fechanacimiento" required oninvalid="this.setCustomValidity('Es necesario ser mayor de edad para continuar')"
+                                oninput="setCustomValidity('')" id="fechanacimiento" disabled>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" class="form-control" ng-model="vm.modificarUsuario.correo" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                                oninput="setCustomValidity('')" id="correo">
+                        </div>
+    
+                        <div class="col-md-3">
+                            <label for="telefono">Número de teléfono </label>
+                            <input type="tel" class="form-control" ng-model="vm.modificarUsuario.telefono" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                                oninput="setCustomValidity('')" id="telefono">
+                        </div>
+    
+                        <div class="col-md-6">
+                            <button type="submit" class="btn">Finalizar Edición</button>
+                        </div>

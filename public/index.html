@@ -9,10 +9,13 @@
   <title page-title>Travel Rate</title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="./lib/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="./lib/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="./lib/animate/animate.min.css">
+  <link rel="stylesheet" href="./lib/vegas/vegas.min.css">
+  <link rel="stylesheet" href="./lib/rating/jk-rating-stars.min.css">
+
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Estilo Generales -->
   <link rel="stylesheet" href="./sources/styles.min.css">
@@ -27,17 +30,19 @@
   <script src="./lib/bootstrap/jquery.min.js"></script>
   <script src="./lib/bootstrap/popper.min.js"></script>
   <script src="./lib/bootstrap/bootstrap.min.js"></script>
+  <script src="./lib/jquery/jquery.js"></script>
   <script src="./lib/sweetalert/sweetalert.min.js"></script>
-  <script src="./lib/payform/jquery.payform.min.js"></script>
-  <script src="./lib/wow/wow.js"></script>
   <script src="./lib/wow/wow.min.js"></script>
-  <script src="./lib/jquery/jquery-migrate.min.js"></script>
-  <script src="./lib/jquery/jquery.min.js"></script>
-
-
-
+  <script src="./lib/vegas/vegas.min.js"></script>
+ 
 
   
+
+
+
+   <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIFE1oRc-MhT3cr2oBORSfwcWuopHCNjI&libraries=places">
+    </script>
   
 
   <!-- Script de Angular -->
@@ -47,9 +52,10 @@
     <script src="./lib/angular/routing/angular-ui-router.min.js"></script>
     <script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
     <script src="./lib/angular/routing/page-title.min.js"></script>
-    <script src="./lib/angular/routing/payform.js"></script>
     <script src="./lib/ng-file-upload/ng-file-upload.min.js"></script>
     <script src="./lib/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="./lib/ng-map/ng-map.min.js"></script>
+    <script src="./lib/rating/jk-rating-stars.min.js"></script>
 
    
     
@@ -67,15 +73,13 @@
     Factories
   -->
   <script src="./components/factories/dataStorage.factory.js"></script>
-
-  <!-- servicios -->
-  <script src="./components/servicios/servicioUsuarios.service.js"></script>
   <script src="./components/servicios/autenticacion/inicioSesion.service.js"></script>
   <script src="./components/servicios/autenticacion/session.service.js"></script>
-  <script src="./components/servicios/servicioEntidades.service.js"></script>
-  <script src="./components/servicios/servicioSucursales.service.js"></script>
-  <script src="./components/servicios/image.service.js"></script>
-  <script src="./components/servicios/servicioArticulos.service.js"></script>
+  <script src="./components/servicios/servicioUsuarios.service.js"></script>
+  <script src="./components/servicios/servicioHoteles.service.js"></script>
+  <script src="./components/servicios/imageService.js"></script>
+  <!-- servicios -->
+
   
   
   

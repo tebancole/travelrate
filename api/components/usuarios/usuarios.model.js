@@ -4,39 +4,16 @@ const mongoose = require('mongoose');
 //Esquema de usuarios
 var UserSchema = new mongoose.Schema({
   cedula : {type : String, required : true},
-  foto : {type : String, required : true},
-  primerNombre : {type : String, required : true},
-  segundoNombre : {type : String},
-  primerApellido : {type : String, required : true},
-  segundoApellido : {type : String},
+  primernombre : {type : String, required : true},
+  segundonombre : {type : String},
+  primerapellido : {type : String, required : true},
+  segundoapellido : {type : String},
   correo : {type : String, required : true, unique: true},
   telefono : {type : String, required : true},
-  fechaNacimiento : {type : Date, required : true},
-  provincia : {type : String, required : true},
-  canton : {type : String, required : true},
-  distrito : {type : String, required : true},
-  direccionExacta : {type : String, required : true},
-  tipo : {type : String},
-  listaPaquetes :  [
-    {
-      tracking: {type: String}
-
-    }],
-  sucursalAsignada : {type : String, required : true},
-  puesto : {type : String},
-  vehiculo : {type : String},
-  listaLicencias : {type : Array, required : true},
+  fechanacimiento : {type : Date, required : true},
+  contrasenna : {type : String, required : true},
+  rol : {type : String, required : true},
   estado : {type : String, required : true},
-  listaTarjetas : [
-    {
-      tarjetaID: {type: String}
-    }],
-  listaPaquetesConvenios : [
-    {
-      tracking: {type: String}
-
-    }],
-  contrasenna : {type : String, required : true}
 });
 
 //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose

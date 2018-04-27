@@ -14,7 +14,7 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-    dburl = 'mongodb://TravelRate:HiSSon70+70@ds119489.mlab.com:19489/travelrate',
+dburl = 'mongodb://travelrate:travelrate2017@ds117093.mlab.com:17093/tebancole',
     port = 4000;
 
 let server = app.listen(port,_server());
@@ -33,7 +33,7 @@ db.on('error', console.error.bind(console, 'Error de conexión: '));
  * Si la conexión es exitosa nos imprime en la consola que se ha establecido conexión con Mongo
  */
 db.once('open', () => {
-  console.log('Base de datos conectada correctamente');
+  ('Base de datos conectada correctamente');
 });
 
 
@@ -62,7 +62,9 @@ app.use( (req, res, next) => {
  ///Aqui van agregados todos los componentes amiguitos!!
 const index = require('./index'),
       usuarios = require('./components/usuarios/usuarios.route'),
-      nodeMailer = require('./components/mail/mail.route')
+      hoteles = require('./components/hoteles/hoteles.route.js'),
+      nodeMailer = require('./components/mail/mail.route');
+ 
       
 
 /**
@@ -72,12 +74,12 @@ const index = require('./index'),
 ///Aqui van agregados todos los componentes amiguitos!!
 app.use('/api', usuarios);
 app.use('/api', nodeMailer);
-
+app.use('/api', hoteles);
 app.use('/', index);
 
 /// Se guarda todo lo que se ha realizado
 module.exports = app;
 
 function _server(){
-  console.log('Conexión establecida en el puerto ' + port);
+  ('Conexión establecida en el puerto ' + port);
 };

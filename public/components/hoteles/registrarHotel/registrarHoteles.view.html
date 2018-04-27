@@ -1,0 +1,87 @@
+<div ng-include="'./components/includes/_header.html'"></div>
+<section id="registrohotel">
+    <div class="container">
+
+
+        <!-- <ng-map id="mapa" class="map-responsive" center="{{center}}" zoom="8" on-click="vm.getpos($event)" style='width: 100%; margin: 15px;'>
+            <marker position="{{latlng}}" center='current-position' ondragenter="getpos($event)" animation="Animation.BOUNCE" animation="DROP"
+                draggable="true"></marker> -->
+
+        <!-- {{latlng}} -->
+        <h3>Ingrese los datos</h3>
+        <form class="col-12 row text-center wrapperregistrohotel" ng-submit="vm.preRegistrarHotel(vm.nuevoHotel)">
+
+            <input type="text" name="fieldid" id="fieldid" class="" ng-model="vm.nuevoHotel.id" hidden/>
+
+            <ng-map id="mapreg" class="map-responsive" center="current-location" style='width: 100%; margin: 15px;' zoom="8">
+                <marker position="current-location" draggable="true" on-dragend="vm.getCurrentLocation($event)" coords="marker.coords" options="marker.options"
+                    animation="Animation.BOUNCE" animation="DROP"></marker>
+            </ng-map>
+
+            <div class="col-md-12">
+                <label for="nombreHotel">Nombre del Hotel</label>
+                <input type="text" class="form-control" id="nombreHotel" ng-model="vm.nuevoHotel.nombre" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                    oninput="setCustomValidity('')">
+            </div>
+            <div class="col-md-4">
+                <label for="">Provincia</label>
+                <input list="sltProvincia" class="form-control" name="sltProvincia" ng-change="vm.rellenarCantones(vm.nuevoHotel.provincia)"
+                    ng-model="vm.nuevoHotel.provincia" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                    oninput="setCustomValidity('')">
+                <datalist id="sltProvincia">
+                    <option ng-repeat="provincia in vm.provincias track by provincia._id" value="{{provincia.name}}" id="{{provincia._id}}">
+                </datalist>
+            </div>
+            <div class="col-md-4">
+                <label for="">Cantón</label>
+                <input list="sltCanton" name="sltCanton" class="form-control" ng-change="vm.rellenarDistrito(vm.nuevoHotel.canton)" ng-model="vm.nuevoHotel.canton"
+                    required oninvalid="this.setCustomValidity('Este Campo es Requerido')" oninput="setCustomValidity('')">
+                <datalist id="sltCanton">
+                    <option ng-repeat="canton in vm.cantones" value="{{canton.name}}">
+                </datalist>
+            </div>
+            <div class="col-md-4">
+                <label for="">Distrito</label>
+                <input list="sltDistrito" name="sltDistrito" class="form-control" ng-model="vm.nuevoHotel.distrito" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                    oninput="setCustomValidity('')">
+                <datalist id="sltDistrito">
+                    <option ng-repeat="distrito in vm.distritos" value="{{distrito.name}}">
+                </datalist>
+            </div>
+            <div class="col-md-6">
+                <label for="direccionexacta">Direccion Exacta</label>
+                <input type="text" class="form-control" id="direccionexacta" ng-model="vm.nuevoHotel.direccionexacta" required oninvalid="this.setCustomValidity('Este Campo es Requerido')" oninput="setCustomValidity('')">
+            </div>
+            <div class="col-md-3">
+                <label for="telserviciocliente">Telefono Servicio Cliente</label>
+                <input type="text" class="form-control" id="telserviciocliente" ng-model="vm.nuevoHotel.telserviciocliente" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                    oninput="setCustomValidity('')">
+            </div>
+            <div class="col-md-3">
+                <label for="telreservaciones">Telefono Reservaciones</label>
+                <input type="text" class="form-control" id="telreservaciones" ng-model="vm.nuevoHotel.telreservaciones" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                    oninput="setCustomValidity('')">
+            </div>
+            <div class="col-md-3">
+                <label for="correoserviciocliente">Correo Servicio Cliente</label>
+                <input type="email" class="form-control" id="correoserviciocliente" ng-model="vm.nuevoHotel.correoserviciocliente" required
+                    oninvalid="this.setCustomValidity('Este Campo es Requerido')" oninput="setCustomValidity('')">
+            </div>
+            <div class="col-md-3">
+                <label for="correoreservaciones">Correo Reservaciones</label>
+                <input type="email" class="form-control" id="correoreservaciones" ng-model="vm.nuevoHotel.correoreservaciones" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                    oninput="setCustomValidity('')">
+            </div>
+            <div class="col-md-3">
+                <label for="foto">Foto de Referencia</label>
+                <input type="file" class="form-control" id="foto" ng-model="vm.nuevoHotel.foto" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
+                    oninput="setCustomValidity('')" img-upload>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn">Finalizar Registro</button>
+            </div>
+
+        </form>
+    </div>
+
+</section>
