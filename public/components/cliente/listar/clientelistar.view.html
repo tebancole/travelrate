@@ -62,7 +62,7 @@
                         <td>{{usuario.nombre}} {{usuario.segundonombre}} {{usuario.primerapellido}} {{usuario.segundoapellido}}</td>
                         <td class="d-none d-lg-table-cell">{{usuario.correo}}</td>
                         <td class="d-none d-lg-table-cell">{{usuario.telefono}}</td>
-                        <td class="d-none d-lg-table-cell">{{usuario.fechanacimiento}}</td>
+                        <td class="d-none d-lg-table-cell">{{usuario.fechanacimiento | date}}</td>
                         <td>
                             <button class="btn" ng-click="vm.modificar(usuario)">
                                 <i class="far fa-address-book"></i>Editar</button>
