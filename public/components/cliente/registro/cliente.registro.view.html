@@ -50,21 +50,21 @@
                     <div class="col-md-3">
                         <label for="telefono">Número de teléfono </label>
                         <input type="tel" class="form-control" ng-model="vm.nuevoUsuario.telefono" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                            oninput="setCustomValidity('')" id="telefono" maxlength="11">
+                            oninput="setCustomValidity('')" id="telefono" minlength="11" maxlength="11">
                     </div>
 
                     <div class="col-md-3">
 
-                        <label for="contrasenna">Crear contraseña <strong>*</strong></label>
+                        <label for="contrasenna1">Crear contraseña <strong>*</strong></label>
                         <input type="password" class="form-control" ng-model="vm.nuevoUsuario.contrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                            oninput="setCustomValidity('')" id="contrasenna" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            oninput="setCustomValidity('')" id="contrasenna1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
               
                     </div>
                     <div class="col-md-3">
 
-                            <label for="contrasenna">Confirme su contraseña</label>
+                            <label for="contrasenna2">Confirme su contraseña</label>
                             <input type="password" class="form-control" ng-model="vm.confirmarContrasenna" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                                oninput="setCustomValidity('')" id="contrasenna" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                oninput="setCustomValidity('')" id="contrasenna2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                         </div>
                     <div class="col-md-6">
                       

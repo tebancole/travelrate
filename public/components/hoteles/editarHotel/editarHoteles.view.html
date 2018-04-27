@@ -59,12 +59,12 @@
             <div class="col-md-3">
                 <label for="telserviciocliente">Telefono Servicio Cliente</label>
                 <input type="tel" class="form-control" id="telserviciocliente" ng-model="vm.modificarHotel.telserviciocliente" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                    oninput="setCustomValidity('')">
+                    oninput="setCustomValidity('')" minlength="11" maxlength="11">
             </div>
             <div class="col-md-3">
                 <label for="telreservaciones">Telefono Reservaciones</label>
                 <input type="tel" class="form-control" id="telreservaciones" ng-model="vm.modificarHotel.telreservaciones" required oninvalid="this.setCustomValidity('Este Campo es Requerido')"
-                    oninput="setCustomValidity('')">
+                    oninput="setCustomValidity('')" minlength="11" maxlength="11">
             </div>
             <div class="col-md-3">
                 <label for="correoserviciocliente">Correo Servicio Cliente</label>
